@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | makeBook</title>
+  <title>makeBook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="vue基础的原理实现一.指令1指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中  1.全局指令(1).基本语法1Vue.directive(&amp;#x27;directiveName&amp;#x27;,&amp;#123;bind()&amp;#123;&amp;#125;,inserted()&amp;#123;&amp;#125;,updated()&amp;#123;&amp;#125;,componentUpdated">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
+<meta property="og:title" content="makeBook">
 <meta property="og:url" content="http://example.com/2022/07/28/hello-world/index.html">
 <meta property="og:site_name" content="makeBook">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="vue基础的原理实现一.指令1指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中  1.全局指令(1).基本语法1Vue.directive(&amp;#x27;directiveName&amp;#x27;,&amp;#123;bind()&amp;#123;&amp;#125;,inserted()&amp;#123;&amp;#125;,updated()&amp;#123;&amp;#125;,componentUpdated">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-28T10:08:37.952Z">
-<meta property="article:modified_time" content="2022-07-28T10:08:37.952Z">
+<meta property="article:modified_time" content="2022-07-28T15:24:18.166Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
   
@@ -87,36 +87,43 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="vue基础的原理实现"><a href="#vue基础的原理实现" class="headerlink" title="vue基础的原理实现"></a>vue基础的原理实现</h1><h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="1-全局指令"><a href="#1-全局指令" class="headerlink" title="1.全局指令"></a>1.全局指令</h3><h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="(1).基本语法"></a>(1).基本语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&#x27;directiveName&#x27;,&#123;bind()&#123;&#125;,inserted()&#123;&#125;,updated()&#123;&#125;,componentUpdated()&#123;&#125;,unbing()&#123;&#125;&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h4 id="2-实例展示"><a href="#2-实例展示" class="headerlink" title="(2).实例展示"></a>(2).实例展示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">&#x27;myFouce&#x27;</span>, &#123;</span><br><span class="line">/**</span><br><span class="line">    全局注册自定义指令五个钩子函数<span class="built_in">bind</span>(),inserted(),update(),componentUpdated(),unbind(),每个钩子函数接受四个参数:</span><br><span class="line">    el:指令绑定不在那个元素上,比如在div上,el就是div的dom对象</span><br><span class="line">    binding:&#123;&#125;,包含指令的部分信息,比如名字,value等,value是从自定义指令接受数据</span><br><span class="line">    vNode:指令现在的节点,一般绑定在谁身上就是谁</span><br><span class="line">    oldVnode:指令之前的节点</span><br><span class="line">*/</span><br><span class="line">  <span class="built_in">bind</span> (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;bind&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;,//执行一次,就是绑定元素于指令</span><br><span class="line">  inserted (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;inserted&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;,//作用于大部分的指令功能</span><br><span class="line">  update (el, binding, vNode, oldVnod) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;update&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnod)</span><br><span class="line">    // el.focus()</span><br><span class="line">  &#125;,//可能不会生效,虚拟节点可能没准备好</span><br><span class="line">  componentUpdated (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;componentUpdated&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    // el.focus()</span><br><span class="line">  &#125;,//在该钩子函数内,任何时候都能执行功能,因为虚拟节点准备好了</span><br><span class="line">  unbind (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;unbind&#x27;</span>)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;//接触指令与绑定的标签元素</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="2-局部指令"><a href="#2-局部指令" class="headerlink" title="2.局部指令"></a>2.局部指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">局部指令和全局指令类似,只不过用法稍微不一样</span><br><span class="line">  directives: &#123;</span><br><span class="line">    myFouce: &#123;</span><br><span class="line">      <span class="function"><span class="title">inserted</span></span> () &#123;&#125;</span><br><span class="line">      //等等钩子函数</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="二-修饰符"><a href="#二-修饰符" class="headerlink" title="二.修饰符"></a>二.修饰符</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修饰符分为三种:事件修饰符,按键修饰符,精准修饰符</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-事件修饰符"><a href="#1-事件修饰符" class="headerlink" title="1.事件修饰符"></a>1.事件修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">事件修饰符:  @click.stop = handleClick()阻止冒泡;@cick.passive = handlecikck()阻塞后面的事件,直到当前事件完成等等修饰符</span><br><span class="line">用于对v-on产生的事件作出类似于原生dom的修饰方法</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-按键修饰符"><a href="#2-按键修饰符" class="headerlink" title="2.按键修饰符"></a>2.按键修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按键修饰符: .enter, .ctrl, .esc等等按下某个案件的时候才触发对应的事件,用于对键盘按键的控制</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-精准修饰符"><a href="#3-精准修饰符" class="headerlink" title="3.精准修饰符"></a>3.精准修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">精准修饰符: .exact,精确的控制,只有当按下那个修饰符的时候才能触发(普通情况下,.ctrl修饰时,就是同时按下alt和<span class="built_in">shift</span>也能触发)</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-插槽"><a href="#三-插槽" class="headerlink" title="三.插槽"></a>三.插槽</h2><ol>
+<li><p><strong>在组件中,一般会在组件中留下些许个位置用<code> &lt;slot&gt;&lt;/slot&gt;</code>占位,这些未知表示留个用户自己插入元素数据,当我们在父组件中要是用到这些插槽的时候,根据插槽名字填入相应的内容就可以</strong></p>
+</li>
+<li><p><strong>插槽类型</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">匿名插槽 : 没有名称的插槽和具名插槽在这一点上相反</span><br><span class="line">具名插槽 : 有名字的插槽,在某些ui库中将某些组件的属性拿出来单独放在一个`&lt;slot&gt;&lt;slot/&gt;`标签里面</span><br><span class="line">		  子组件 &lt;slot  name= <span class="string">&quot;slotName&quot;</span>&gt;&lt;/slot&gt;</span><br><span class="line">		  父组件,具体标签具体应用(都是放在子组件内的哈)比如:</span><br><span class="line">          &lt;template  v-slot:slotName&gt;&lt;div&gt;&#123;&#123;插值表达式,可以放函数&#125;&#125;&lt;/div&gt;&lt;/template&gt; 2.6.0之后</span><br><span class="line">          &lt;template slot=<span class="string">&quot;slotName&quot;</span>&gt;&lt;div&gt;&#123;&#123;插值表达式,可以放函数&#125;&#125;&lt;/div&gt;&lt;/template&gt;2.6.0之前</span><br><span class="line">          &lt;div slot=<span class="string">&quot;slotName&quot;</span>&gt;&#123;&#123;插值表达式,可以放函数&#125;&#125;&lt;/div&gt; 2.6.0之前</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">作用域插槽 : 父组件有时候想使用子组件的变量数据,通过动态绑定来实现</span><br><span class="line">		  子组件:&lt;slot :username = username&gt;&lt;/slot&gt; 假定子组件有一个username的变量</span><br><span class="line">          父组件:&lt;template v-slot:default=<span class="string">&quot;slotProps&quot;</span>&gt;&#123;&#123; slotProps.username.firstName &#125;&#125;&lt;/template&gt;</span><br><span class="line">    	  slotProps自己去的名字,类似于ref,可以再这个对象中拿到username</span><br><span class="line">    	  &lt;template slot=<span class="string">&quot;default&quot;</span> slot-scope=<span class="string">&quot;slotProps&quot;</span>&gt;&#123;&#123; slotProps.msg &#125;&#125;&lt;/template&gt; 2.6.0之前</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="四-动态组件"><a href="#四-动态组件" class="headerlink" title="四.动态组件"></a>四.动态组件</h2><h3 id="1-component"><a href="#1-component" class="headerlink" title="1.component"></a>1.component</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;component include=<span class="string">&#x27;正则/数组字/符串&#x27;</span> exclude=<span class="string">&#x27;正则/数组字/符串&#x27;</span> max=10 :is=<span class="string">&quot;组件名&quot;</span>&gt;&lt;/component&gt;动态组件可以根据不同的名字来切换把不同的组件</span><br><span class="line">条件缓存:</span><br><span class="line">	include:都是有条件的缓存组件,满足条件的缓存</span><br><span class="line">	exclude:不满足及条件之外的缓存</span><br><span class="line">缓存最大数量:</span><br><span class="line">	max:最大的缓存数量,如果超过了这个数量,就会在执行栈删除最先缓存的那个组件</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-keep-alive"><a href="#2-keep-alive" class="headerlink" title="2.keep-alive"></a>2.keep-alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;&lt;/keep-alive&gt;这个内置的组件可以帮我们缓存组件的内容,避免切换回当前组件时,重复渲染浪费性能,通常和动态组件一起使用</span><br><span class="line">独有的两个生命周期函数:</span><br><span class="line">	<span class="function"><span class="title">activated</span></span>()&#123;&#125;</span><br><span class="line">    组件在激活时可执行该函数</span><br><span class="line">    过程:组件没被销毁之前</span><br><span class="line">    场景:在组件被销毁后在现组件,用<span class="function"><span class="title">activated</span></span>()&#123;&#125;和<span class="function"><span class="title">deactivated</span></span>()&#123;&#125;比用<span class="function"><span class="title">boforeDestroy</span></span>()&#123;&#125;和<span class="function"><span class="title">destroyed</span></span>()&#123;&#125;更加节省性能</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">deactivated</span></span>()&#123;&#125;</span><br><span class="line">    组件失活,还没被激活的时候的钩子函数,比如组件被&lt;keep-alive&gt;&lt;/keep-alive&gt;包裹时调用</span><br><span class="line"></span><br><span class="line">	总结:这两个钩子函数的调用早于<span class="function"><span class="title">beforeDestroy</span></span>()&#123;&#125;和<span class="function"><span class="title">destroyed</span></span>()&#123;&#125;,在组件复现的时候更加节约性能</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/07/28/hello-world/" data-id="cl64wq0hf0000i4oyerda32mb" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/07/28/hello-world/" data-id="cl6572cq50000hkoy824ab2kx" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -175,7 +182,7 @@
           </li>
         
           <li>
-            <a href="/2022/07/28/hello-world/">Hello World</a>
+            <a href="/2022/07/28/hello-world/">(no title)</a>
           </li>
         
       </ul>
