@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/myBook/2022/07/28/hello-world/</url>
+    <title>关于vue2的一点事儿</title>
+    <url>/myBook/2022/07/29/hello-world/</url>
     <content><![CDATA[<h1 id="vue基础的原理实现"><a href="#vue基础的原理实现" class="headerlink" title="vue基础的原理实现"></a>vue基础的原理实现</h1><h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中</span><br></pre></td></tr></table></figure>
 
 <h3 id="1-全局指令"><a href="#1-全局指令" class="headerlink" title="1.全局指令"></a>1.全局指令</h3><h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="(1).基本语法"></a>(1).基本语法</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Vue.directive(&#x27;directiveName&#x27;,&#123;bind()&#123;&#125;,inserted()&#123;&#125;,updated()&#123;&#125;,componentUpdated()&#123;&#125;,unbing()&#123;&#125; &#125;)</span><br></pre></td></tr></table></figure>
