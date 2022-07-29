@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"tosanyue.github.io","root":"/myBook/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"tosanyue.github.io","root":"/myBook/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":1},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="博客">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-07-29 15:00:16 / 修改时间：15:06:44" itemprop="dateCreated datePublished" datetime="2022-07-29T15:00:16+08:00">2022-07-29</time>
+              <time title="创建时间：2022-07-29 15:00:16 / 修改时间：21:03:01" itemprop="dateCreated datePublished" datetime="2022-07-29T15:00:16+08:00">2022-07-29</time>
             </span>
 
           <br>
@@ -267,7 +267,7 @@
 
 <h3 id="1-事件修饰符"><a href="#1-事件修饰符" class="headerlink" title="1.事件修饰符"></a>1.事件修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">事件修饰符:  @click.stop = handleClick()阻止冒泡;@cick.passive = handlecikck()阻塞后面的事件,直到当前事件完成等等修饰符</span><br><span class="line">用于对v-on产生的事件作出类似于原生dom的修饰方法</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-按键修饰符"><a href="#2-按键修饰符" class="headerlink" title="2.按键修饰符"></a>2.按键修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按键修饰符: .enter, .ctrl, .esc等等按下某个案件的时候才触发对应的事件,用于对键盘按键的控制</span><br></pre></td></tr></table></figure>
+<h3 id="2-按键修饰符"><a href="#2-按键修饰符" class="headerlink" title="2.按键修饰符"></a>2.按键修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">按键修饰符: .enter, .ctrl, .esc等等按下某个按键的时候才触发对应的事件,用于对键盘按键的控制</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-精准修饰符"><a href="#3-精准修饰符" class="headerlink" title="3.精准修饰符"></a>3.精准修饰符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">精准修饰符: .exact,精确的控制,只有当按下那个修饰符的时候才能触发(普通情况下,.ctrl修饰时,就是同时按下alt和<span class="built_in">shift</span>也能触发)</span><br></pre></td></tr></table></figure>
 
@@ -280,6 +280,9 @@
 <h2 id="四-动态组件"><a href="#四-动态组件" class="headerlink" title="四.动态组件"></a>四.动态组件</h2><h3 id="1-component"><a href="#1-component" class="headerlink" title="1.component"></a>1.component</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;component include=<span class="string">&#x27;正则/数组字/符串&#x27;</span> exclude=<span class="string">&#x27;正则/数组字/符串&#x27;</span> max=10 :is=<span class="string">&quot;组件名&quot;</span>&gt;&lt;/component&gt;动态组件可以根据不同的名字来切换把不同的组件</span><br><span class="line">条件缓存:</span><br><span class="line">	include:都是有条件的缓存组件,满足条件的缓存</span><br><span class="line">	exclude:不满足及条件之外的缓存</span><br><span class="line">缓存最大数量:</span><br><span class="line">	max:最大的缓存数量,如果超过了这个数量,就会在执行栈删除最先缓存的那个组件</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-keep-alive"><a href="#2-keep-alive" class="headerlink" title="2.keep-alive"></a>2.keep-alive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;&lt;/keep-alive&gt;这个内置的组件可以帮我们缓存组件的内容,避免切换回当前组件时,重复渲染浪费性能,通常和动态组件一起使用</span><br><span class="line">独有的两个生命周期函数:</span><br><span class="line">	<span class="function"><span class="title">activated</span></span>()&#123;&#125;</span><br><span class="line">    组件在激活时可执行该函数</span><br><span class="line">    过程:组件没被销毁之前</span><br><span class="line">    场景:在组件被销毁后在现组件,用<span class="function"><span class="title">activated</span></span>()&#123;&#125;和<span class="function"><span class="title">deactivated</span></span>()&#123;&#125;比用<span class="function"><span class="title">boforeDestroy</span></span>()&#123;&#125;和<span class="function"><span class="title">destroyed</span></span>()&#123;&#125;更加节省性能</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="title">deactivated</span></span>()&#123;&#125;</span><br><span class="line">    组件失活,还没被激活的时候的钩子函数,比如组件被&lt;keep-alive&gt;&lt;/keep-alive&gt;包裹时调用</span><br><span class="line"></span><br><span class="line">	总结:这两个钩子函数的调用早于<span class="function"><span class="title">beforeDestroy</span></span>()&#123;&#125;和<span class="function"><span class="title">destroyed</span></span>()&#123;&#125;,在组件复现的时候更加节约性能</span><br></pre></td></tr></table></figure>
+
+
+
 
 
 
@@ -302,6 +305,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/myBook/page/2/">2</a><a class="extend next" rel="next" href="/myBook/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -368,7 +374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/myBook/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -425,12 +431,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
