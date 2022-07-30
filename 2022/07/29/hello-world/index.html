@@ -28,7 +28,7 @@
 <meta property="og:description" content="vue基础的原理实现一.指令1指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中  1.全局指令(1).基本语法1Vue.directive(&amp;#x27;directiveName&amp;#x27;,&amp;#123;bind()&amp;#123;&amp;#125;,inserted()&amp;#123;&amp;#125;,updated()&amp;#123;&amp;#125;,componentUpdated">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-29T07:00:16.000Z">
-<meta property="article:modified_time" content="2022-07-29T13:03:01.200Z">
+<meta property="article:modified_time" content="2022-07-30T09:51:32.338Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
@@ -76,6 +76,8 @@
   </style>
 </noscript>
 
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 <link rel="alternate" href="/myBook/atom.xml" title="makeBook" type="application/atom+xml">
 </head>
 
@@ -227,10 +229,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-29 15:00:16 / 修改时间：21:03:01" itemprop="dateCreated datePublished" datetime="2022-07-29T15:00:16+08:00">2022-07-29</time>
+              <time title="创建时间：2022-07-29 15:00:16" itemprop="dateCreated datePublished" datetime="2022-07-29T15:00:16+08:00">2022-07-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-30 17:51:32" itemprop="dateModified" datetime="2022-07-30T17:51:32+08:00">2022-07-30</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -266,7 +274,7 @@
       
         <h1 id="vue基础的原理实现"><a href="#vue基础的原理实现" class="headerlink" title="vue基础的原理实现"></a>vue基础的原理实现</h1><h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">指令分为全局指令和局部指令,全局指令注册在main.js中,局部指令注册在各个组件中</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-全局指令"><a href="#1-全局指令" class="headerlink" title="1.全局指令"></a>1.全局指令</h3><h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="(1).基本语法"></a>(1).基本语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&#x27;directiveName&#x27;,&#123;bind()&#123;&#125;,inserted()&#123;&#125;,updated()&#123;&#125;,componentUpdated()&#123;&#125;,unbing()&#123;&#125; &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="1-全局指令"><a href="#1-全局指令" class="headerlink" title="1.全局指令"></a>1.全局指令</h3><h4 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="(1).基本语法"></a>(1).基本语法</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(&#x27;directiveName&#x27;,&#123;bind()&#123;&#125;,inserted()&#123;&#125;,updated()&#123;&#125;,componentUpdated()&#123;&#125;,unbind()&#123;&#125; &#125;)</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-实例展示"><a href="#2-实例展示" class="headerlink" title="(2).实例展示"></a>(2).实例展示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">&#x27;myFouce&#x27;</span>, &#123;</span><br><span class="line">/**</span><br><span class="line">    全局注册自定义指令五个钩子函数<span class="built_in">bind</span>(),inserted(),update(),componentUpdated(),unbind(),每个钩子函数接受四个参数:</span><br><span class="line">    el:指令绑定不在那个元素上,比如在div上,el就是div的dom对象</span><br><span class="line">    binding:&#123;&#125;,包含指令的部分信息,比如名字,value等,value是从自定义指令接受数据</span><br><span class="line">    vNode:指令现在的节点,一般绑定在谁身上就是谁</span><br><span class="line">    oldVnode:指令之前的节点</span><br><span class="line">*/</span><br><span class="line">  <span class="built_in">bind</span> (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;bind&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;,//执行一次,就是绑定元素于指令</span><br><span class="line">  inserted (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;inserted&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;,//作用于大部分的指令功能</span><br><span class="line">  update (el, binding, vNode, oldVnod) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;update&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnod)</span><br><span class="line">    // el.focus()</span><br><span class="line">  &#125;,//可能不会生效,虚拟节点可能没准备好</span><br><span class="line">  componentUpdated (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;componentUpdated&#x27;</span>)</span><br><span class="line">    console.log(el, binding, vNode, oldVnode)</span><br><span class="line">    // el.focus()</span><br><span class="line">  &#125;,//在该钩子函数内,任何时候都能执行功能,因为虚拟节点准备好了</span><br><span class="line">  unbind (el, binding, vNode, oldVnode) &#123;</span><br><span class="line">    console.log(<span class="string">&#x27;unbind&#x27;</span>)</span><br><span class="line">    el.focus()</span><br><span class="line">  &#125;//接触指令与绑定的标签元素</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
@@ -578,5 +586,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 });
 </script>
 
+  <script src="https://tosanyue.github.io/live2d/autoload.js"></script>
 <script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
