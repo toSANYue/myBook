@@ -6,7 +6,7 @@
   <link href="https://tosanyue.github.io/myBook/atom.xml" rel="self"/>
   
   <link href="https://tosanyue.github.io/myBook/"/>
-  <updated>2022-07-29T13:03:01.200Z</updated>
+  <updated>2022-07-30T08:21:13.952Z</updated>
   <id>https://tosanyue.github.io/myBook/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue-vuex</title>
+    <link href="https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/"/>
+    <id>https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/</id>
+    <published>2022-07-30T03:17:15.000Z</published>
+    <updated>2022-07-30T08:21:13.952Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;vuex状态管理器&quot;&gt;&lt;a href=&quot;#vuex状态管理器&quot; class=&quot;headerlink&quot; title=&quot;vuex状态管理器&quot;&gt;&lt;/a&gt;vuex状态管理器&lt;/h1&gt;&lt;h2 id=&quot;state&quot;&gt;&lt;a href=&quot;#state&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>关于vue2的一点事儿</title>
