@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tosanyue.github.io/myBook/categories/1.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/about/vue-vuex.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/about/vue-API.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/about/me.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/about/index.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tosanyue.github.io/myBook/categories/index.html</loc>
+    
+    <lastmod>2022-07-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tosanyue.github.io/myBook/2022/07/29/hello-world/</loc>
     
     <lastmod>2022-07-30</lastmod>
@@ -11,25 +83,7 @@
   </url>
   
   <url>
-    <loc>https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/</loc>
-    
-    <lastmod>2022-07-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tosanyue.github.io/myBook/2022/07/29/vueAPI/</loc>
-    
-    <lastmod>2022-07-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tosanyue.github.io/myBook/categories/index.html</loc>
     
     <lastmod>2022-07-29</lastmod>
     
@@ -76,7 +130,7 @@
 
   <url>
     <loc>https://tosanyue.github.io/myBook</loc>
-    <lastmod>2022-07-30</lastmod>
+    <lastmod>2022-07-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

@@ -6,7 +6,7 @@
   <link href="https://tosanyue.github.io/myBook/atom.xml" rel="self"/>
   
   <link href="https://tosanyue.github.io/myBook/"/>
-  <updated>2022-07-30T08:21:13.952Z</updated>
+  <updated>2022-07-31T10:15:15.834Z</updated>
   <id>https://tosanyue.github.io/myBook/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue2的补充</title>
+    <link href="https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/"/>
+    <id>https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/</id>
+    <published>2022-07-30T10:59:26.000Z</published>
+    <updated>2022-07-31T10:15:15.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;混入&quot;&gt;&lt;a href=&quot;#混入&quot; class=&quot;headerlink&quot; title=&quot;混入&quot;&gt;&lt;/a&gt;混入&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>vue-vuex</title>
     <link href="https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/"/>
     <id>https://tosanyue.github.io/myBook/2022/07/30/vue-vuex/</id>
     <published>2022-07-30T03:17:15.000Z</published>
-    <updated>2022-07-30T08:21:13.952Z</updated>
+    <updated>2022-07-31T10:16:39.495Z</updated>
     
     
       
