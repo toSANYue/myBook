@@ -6,7 +6,7 @@
   <link href="https://tosanyue.github.io/myBook/atom.xml" rel="self"/>
   
   <link href="https://tosanyue.github.io/myBook/"/>
-  <updated>2022-07-31T10:15:15.834Z</updated>
+  <updated>2022-07-31T12:19:34.307Z</updated>
   <id>https://tosanyue.github.io/myBook/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue_组件通信</title>
+    <link href="https://tosanyue.github.io/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
+    <id>https://tosanyue.github.io/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</id>
+    <published>2022-07-31T11:50:39.000Z</published>
+    <updated>2022-07-31T12:19:34.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;父子组件通信&quot;&gt;&lt;a href=&quot;#父子组件通信&quot; class=&quot;headerlink&quot; title=&quot;父子组件通信&quot;&gt;&lt;/a&gt;父子组件通信&lt;/h1&gt;&lt;h3 id=&quot;父到子&quot;&gt;&lt;a href=&quot;#父到子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>vue2的补充</title>
     <link href="https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/"/>
     <id>https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/</id>
     <published>2022-07-30T10:59:26.000Z</published>
-    <updated>2022-07-31T10:15:15.834Z</updated>
+    <updated>2022-07-31T11:56:34.583Z</updated>
     
     
       

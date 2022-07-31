@@ -28,7 +28,7 @@
 <meta property="og:description" content="混入123456789101112131415161718192021全局混入 : mixin	语法:Vue.mixin(&amp;#123;  		&#x2F;&#x2F; 这里是vue中的data,create,等		&amp;#125;)	局部混入 ： mixins	语法:  mixins: &amp;#123;    		data () &amp;#123;      			return &amp;#123;&amp;#125;    		&amp;#125;,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-30T10:59:26.000Z">
-<meta property="article:modified_time" content="2022-07-31T10:15:15.834Z">
+<meta property="article:modified_time" content="2022-07-31T11:56:34.583Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
@@ -117,44 +117,39 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-vue">
 
-    <a href="/myBook/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-vue2">
-
-    <a href="/myBook/about/" rel="section"><i class="fa fa-user fa-fw"></i>vue2</a>
-
-  </li>
-        <li class="menu-item menu-item-vue3">
-
-    <a href="/myBook/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>vue3</a>
+    <a href="/myBook/" rel="section"><i class="fa fa-home fa-fw"></i>vue</a>
 
   </li>
         <li class="menu-item menu-item-js">
 
-    <a href="/myBook/categories/" rel="section"><i class="fa fa-th fa-fw"></i>js</a>
+    <a href="/myBook/about/" rel="section"><i class="fa fa-user fa-fw"></i>js</a>
 
   </li>
         <li class="menu-item menu-item-html">
 
-    <a href="/myBook/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>html</a>
+    <a href="/myBook/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>html</a>
 
   </li>
         <li class="menu-item menu-item-css">
 
-    <a href="/myBook/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>css</a>
+    <a href="/myBook/categories/" rel="section"><i class="fa fa-th fa-fw"></i>css</a>
 
   </li>
-        <li class="menu-item menu-item-ts">
+        <li class="menu-item menu-item-structure">
 
-    <a href="/myBook/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>ts</a>
+    <a href="/myBook/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>structure</a>
 
   </li>
         <li class="menu-item menu-item-react">
 
     <a href="/myBook/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>react</a>
+
+  </li>
+        <li class="menu-item menu-item-archive">
+
+    <a href="/myBook/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>archive</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -242,7 +237,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-31 18:15:15" itemprop="dateModified" datetime="2022-07-31T18:15:15+08:00">2022-07-31</time>
+                <time title="修改时间：2022-07-31 19:56:34" itemprop="dateModified" datetime="2022-07-31T19:56:34+08:00">2022-07-31</time>
               </span>
 
           
@@ -281,7 +276,6 @@
 
 <h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">全局过滤 : filter</span><br><span class="line">	语法:Vue.filter(<span class="string">&#x27;filterName&#x27;</span>, &#123;</span><br><span class="line">		//对象里面是一个方法,该方法必须要有返回值</span><br><span class="line">	&#125;)</span><br><span class="line">局部过滤 : filters</span><br><span class="line">	语法:filters:&#123;//对象里面是一个方法,该方法必须要有返回值&#125;</span><br><span class="line">为什么要过滤器函数要有返回值?</span><br><span class="line">	答:在vue中过滤器多作用在插值表达式上,和管道符一起匹配,因为插值表达式只接受表达式,变量,不接受函数</span><br><span class="line">函数有无返回值的意义是否一样?</span><br><span class="line">	答:函数若是有了返回值,name其实这个函数也就变成了一个表达式或者一个特定的值;如果没有返回值的话,函数执行到最后还是函数</span><br><span class="line">过滤器依赖什么?</span><br><span class="line">	答:过滤器和计算属性一样依赖于响应式数据,从而得出某种结果,或者筛选某种结果</span><br></pre></td></tr></table></figure>
 
-
     </div>
 
     
@@ -319,7 +313,10 @@
     <a href="/myBook/2022/07/30/vue-vuex/" rel="prev" title="vue-vuex">
       <i class="fa fa-chevron-left"></i> vue-vuex
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" rel="next" title="vue_组件通信">
+      vue_组件通信 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -394,7 +391,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myBook/archives">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -451,12 +448,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">11k</span>
+    <span title="站点总字数">12k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">11 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
