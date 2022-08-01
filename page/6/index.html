@@ -23,14 +23,14 @@
   <meta name="description" content="博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="makeBook">
-<meta property="og:url" content="https://tosanyue.github.io/myBook/page/5/index.html">
+<meta property="og:url" content="https://tosanyue.github.io/myBook/page/6/index.html">
 <meta property="og:site_name" content="makeBook">
 <meta property="og:description" content="博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tosanyue.github.io/myBook/page/5/">
+<link rel="canonical" href="https://tosanyue.github.io/myBook/page/6/">
 
 
 <script id="page-configurations">
@@ -204,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tosanyue.github.io/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/">
+    <link itemprop="mainEntityOfPage" href="https://tosanyue.github.io/myBook/2022/07/31/vue-router/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/myBook/images/myhead.jpg">
@@ -218,7 +218,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" class="post-title-link" itemprop="url">vue_组件通信</a>
+            <a href="/myBook/2022/07/31/vue-router/" class="post-title-link" itemprop="url">vue-router</a>
         </h2>
 
         <div class="post-meta">
@@ -227,10 +227,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-31 19:50:39 / 修改时间：20:42:26" itemprop="dateCreated datePublished" datetime="2022-07-31T19:50:39+08:00">2022-07-31</time>
+              <time title="创建时间：2022-07-31 20:23:57" itemprop="dateCreated datePublished" datetime="2022-07-31T20:23:57+08:00">2022-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-01 12:57:05" itemprop="dateModified" datetime="2022-08-01T12:57:05+08:00">2022-08-01</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -238,14 +244,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -257,15 +263,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h1><h3 id="父到子"><a href="#父到子" class="headerlink" title="父到子"></a>父到子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vue2 : 父组件动态绑定事件或者属性在子组件上(@<span class="string">&#x27;b&#x27;</span>=<span class="string">&#x27;b&#x27;</span> , :<span class="string">&#x27;a&#x27;</span>.<span class="built_in">sync</span> =<span class="string">&#x27;a&#x27;</span>) || <span class="variable">$child</span> ||<span class="variable">$root</span></span><br><span class="line">vue3 : 父组件直接通过v-module=<span class="string">&#x27;&#x27;</span>搞定事件和属性,并且可以达到同步修改的效果</span><br><span class="line">注意 :  vue3将.<span class="built_in">sync</span>修饰符融合在了v-module中</span><br><span class="line">       而.<span class="built_in">sync</span>修饰符在vue2中子组件同步修改父组件的值很好用</span><br></pre></td></tr></table></figure>
+          <h1 id="vue路由"><a href="#vue路由" class="headerlink" title="vue路由"></a>vue路由</h1><h2 id="路由的由来"><a href="#路由的由来" class="headerlink" title="路由的由来"></a>路由的由来</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于现在单页面应用的普及,路由是为了提升用户体验,避免让用户看到明显的页面跳转,达到局部刷新页面的效果</span><br></pre></td></tr></table></figure>
 
-<h3 id="子到父"><a href="#子到父" class="headerlink" title="子到父"></a>子到父</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vue2 : 子组件通过<span class="variable">$emit</span>绑定事件发消息,父组件在子组件标签上接收到,再在method中定义修改即可</span><br><span class="line">		如果支持.<span class="built_in">sync</span>修饰符那么直接写成this.<span class="variable">$emit</span>(<span class="string">&#x27;update:a&#x27;</span>,<span class="string">&#x27;otherValue&#x27;</span>),父组件即可同步修改 || <span class="variable">$parent</span></span><br><span class="line">vue3 : v-module直接解决或者也可以利用setup(prop,content)&#123;&#125;的第二个参数拿到里面的emit,发消息即可</span><br><span class="line">注意 : vue3中v-module和vue2的v-module集合的事件和属性不一样</span><br><span class="line">	    1.vue3中v-module是:modleValue和@update:ModelValue的结合</span><br><span class="line">	    2.vue2中v-module是:value和@input事件的结合</span><br><span class="line">	  所以在用选项/属性中的model拆分v-module的时候就有说区别了</span><br><span class="line">补充 : modle语法</span><br><span class="line">	  model: &#123;</span><br><span class="line">    	event: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    	prop: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  	&#125;,//默认是上面的名字,但是属性值可以自己修改</span><br></pre></td></tr></table></figure>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><h3 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$router</span>.push(<span class="string">&#x27;跳转地址&#x27;</span> | (&#123;path:<span class="string">&quot;&quot;</span>,query:&#123;&#125; | parmas:&#123;&#125;&#125;)) 跳转到某一个页面去</span><br><span class="line">注意 : 在历史记录栈中,push方法只是添加一个新的记录进去</span><br><span class="line"><span class="variable">$router</span>.replace(<span class="string">&#x27;跳转的详细地址&#x27;</span>)</span><br><span class="line">注意 : 该方法会替换掉记录栈中的记录,栈先进后出的原则,所以替换掉的是最后进入的那个记录</span><br><span class="line"><span class="variable">$router</span>.go(number) 回退或者前进多少个页面</span><br></pre></td></tr></table></figure>
 
-<h1 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h1><h3 id="事件总线"><a href="#事件总线" class="headerlink" title="事件总线"></a>事件总线</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用方法:</span><br><span class="line">	在main.js入口文件处在vue的原型上挂载一个<span class="variable">$evenBus</span>属性,值等于new Vue()</span><br><span class="line">	之后兄弟组件就可以直接通过this.<span class="variable">$evenBus</span>.<span class="variable">$emit</span>()来通信</span><br><span class="line">不推荐使用</span><br></pre></td></tr></table></figure>
+<h3 id="声明式导航"><a href="#声明式导航" class="headerlink" title="声明式导航"></a>声明式导航</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link   to=<span class="string">&quot;路径&quot;</span>&gt;&lt;/router-link&gt;</span><br><span class="line">&lt;router-link   to=<span class="string">&quot;路径&quot;</span> replace&gt;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="间接父子通信"><a href="#间接父子通信" class="headerlink" title="间接父子通信"></a>间接父子通信</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">利用上面的父子组件间接通信,兄弟1到父组件,父组件到兄弟2</span><br></pre></td></tr></table></figure>
+<h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.在规则数组中添加属性props:&#123;&#125;,然后直接在各个组件的props就可以直接接收到</span><br><span class="line">2.通过<span class="variable">$router</span>.params | <span class="variable">$router</span>.query</span><br></pre></td></tr></table></figure>
 
-<h1 id="隔代通信"><a href="#隔代通信" class="headerlink" title="隔代通信"></a>隔代通信</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.依赖注入</span><br><span class="line">	provide : &#123;<span class="built_in">return</span> props&#125;</span><br><span class="line">	inject : [<span class="string">&#x27;props&#x27;</span>] | &#123;props : props&#125;</span><br><span class="line">2.混入:参考文章vue2的补充</span><br><span class="line">3.vuex : 参考文章vue-vuex</span><br><span class="line">4.利用api</span><br><span class="line">	<span class="variable">$attrs</span> : 和父子通信一样,只不过在中间的过渡组件中,不用props接受,在过度的位置上v-bind=<span class="string">&quot;<span class="variable">$attrs</span>&quot;</span>即可,直到最后才用props接受</span><br><span class="line">	<span class="variable">$listeners</span> : 和<span class="variable">$attrs</span>一样</span><br></pre></td></tr></table></figure>
+<h2 id="导航守卫"><a href="#导航守卫" class="headerlink" title="导航守卫"></a>导航守卫</h2><h4 id="前置路由守卫"><a href="#前置路由守卫" class="headerlink" title="前置路由守卫"></a>前置路由守卫</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">beforeEach((to,from,next) =&gt; &#123;&#125;)</span><br><span class="line">/**</span><br><span class="line">在路由跳转之前做某些事情,比如是不是可以跳转,不可以就直接to.path(<span class="string">&#x27;/login&#x27;</span>)</span><br><span class="line">如果可以跳转的话,next()放行即可</span><br><span class="line">**/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="后置路由守卫"><a href="#后置路由守卫" class="headerlink" title="后置路由守卫"></a>后置路由守卫</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">afterEach((to,from) =&gt; &#123;&#125;)</span><br><span class="line">/**</span><br><span class="line">在路由跳转结束后做某些事情,比如关闭进度条,清除痕迹等等操作,因为该操作不跳转路由</span><br><span class="line">所以没有next参数</span><br><span class="line">**/</span><br></pre></td></tr></table></figure>
+
+<h4 id="前置解析守卫"><a href="#前置解析守卫" class="headerlink" title="前置解析守卫"></a>前置解析守卫</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeResolve((to,from,next) =&gt; &#123;&#125;)</span><br><span class="line">/**</span><br><span class="line">解析守卫是在所有的路由组件渲染完成之后,才会执行的一个钩子函数</span><br><span class="line">用法上类似于前置路由守卫</span><br><span class="line">**/</span><br></pre></td></tr></table></figure>
+
+<h4 id="路由独享守卫"><a href="#路由独享守卫" class="headerlink" title="路由独享守卫"></a>路由独享守卫</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeEnter((to,from) =&gt; &#123;&#125;)</span><br><span class="line">/**</span><br><span class="line">只有当在同一个地址下才会触发,比如/user/1到user/2</span><br><span class="line">定义在规则数组中</span><br><span class="line">**/</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta属性:</span><br><span class="line">	在上述的全局守卫中,to属性可以直接调用规则数组中的所有属性to.name | to.meta | to.path等等</span><br><span class="line">	在原信息中可以存放我们自己需要在路由中用到一些数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由与组合式api"><a href="#路由与组合式api" class="headerlink" title="路由与组合式api"></a>路由与组合式api</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在vue3中因为不存在this,如果要在组件中使用路由,name需要引入useRouter和useRoute,</span><br><span class="line">在<span class="function"><span class="title">setup</span></span>()&#123;<span class="built_in">return</span> &#123;&#125;&#125;中使用,但是应该尽量避免监听全部的路由信息</span><br><span class="line"></span><br><span class="line">什么是组合式api?</span><br><span class="line">答:在vue3中,将各个功能的代码组合在一起,就构成了组合式api</span><br><span class="line">   不同于vue2的分布式api,vue3的组合式api更加利用代码维护</span><br><span class="line">   </span><br><span class="line">为什么要避免监听全部的路由信息?</span><br><span class="line">答:因为在vue3中数据的监听利用的是Proxy代理对象,所有类型的数据都可以监听得到,避免浪费性能</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.const UserDetails = () =&gt; import(<span class="string">&#x27;./views/UserDetails&#x27;</span>)</span><br><span class="line">2.webpack的注释语法const UserDetails = () =&gt;import(/* webpackChunkName: <span class="string">&quot;group-user&quot;</span> */ <span class="string">&#x27;./UserDetails.vue&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link /&gt; : 在渲染的时候会被渲染成a标签,用在声明式导航中</span><br><span class="line">&lt;router-view/&gt; : 占位符,作为函数时组件,没有data,没有模板等,路由的渲染结果会被渲染到占位符上</span><br><span class="line">router.addRoute() : router.addRoute(&#123; path: <span class="string">&#x27;/about&#x27;</span>, name: <span class="string">&#x27;about&#x27;</span>, component: About &#125;)</span><br><span class="line">router.removeRoute() : router.removeRoute(<span class="string">&#x27;about&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -285,7 +305,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/myBook/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/myBook/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/myBook/page/6/">6</a><a class="page-number" href="/myBook/page/7/">7</a><a class="extend next" rel="next" href="/myBook/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/myBook/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/myBook/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/myBook/page/7/">7</a><a class="extend next" rel="next" href="/myBook/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

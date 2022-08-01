@@ -22,31 +22,28 @@
 
   <meta name="description" content="博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://tosanyue.github.io/myBook/tags/index.html">
+<meta property="og:title" content="makeBook">
+<meta property="og:url" content="https://tosanyue.github.io/myBook/page/7/index.html">
 <meta property="og:site_name" content="makeBook">
 <meta property="og:description" content="博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-29T10:50:19.000Z">
-<meta property="article:modified_time" content="2022-07-29T10:50:43.606Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://tosanyue.github.io/myBook/tags/">
+<link rel="canonical" href="https://tosanyue.github.io/myBook/page/7/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>tags | makeBook
-</title>
+  <title>makeBook</title>
   
 
 
@@ -200,56 +197,105 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content index posts-expand">
             
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tosanyue.github.io/myBook/2022/08/01/vue3%E7%9A%84%E7%89%B9%E6%80%A7/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myBook/images/myhead.jpg">
+      <meta itemprop="name" content="lindy">
+      <meta itemprop="description" content="博客">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="makeBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myBook/2022/08/01/vue3%E7%9A%84%E7%89%B9%E6%80%A7/" class="post-title-link" itemprop="url">vue3的特性</a>
+        </h2>
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              暂无标签
-            </div>
-            <div class="tag-cloud-tags">
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
               
-            </div>
-          </div>
-        
-      </div>
+
+              <time title="创建时间：2022-08-01 12:39:46 / 修改时间：13:28:27" itemprop="dateCreated datePublished" datetime="2022-08-01T12:39:46+08:00">2022-08-01</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-      
+          <h2 id="特性一"><a href="#特性一" class="headerlink" title="特性一"></a>特性一</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">数据的响应式原理变化了</span><br><span class="line">vue2:利用了es6的Object.defineProperty()方法</span><br><span class="line">	语法:Object.defineProperty(obj ,key ,&#123;<span class="function"><span class="title">get</span></span>()&#123; <span class="built_in">return</span> newValue&#125; ,<span class="built_in">set</span>(value)&#123;&#125;&#125;)</span><br><span class="line">vue3:利用了es6的Proxy代理器对象,</span><br><span class="line">	语法 : const proxy = new Proxy()</span><br><span class="line">		  proxy(Obj,&#123;get(obj,key,[proxy])&#123;&#125; ,<span class="built_in">set</span>(obj,key,value,[proxy])&#123;&#125;&#125;)</span><br><span class="line">缺点分析</span><br><span class="line">vue2的响应式拦截原理缺点:</span><br><span class="line">	无法拦截到数组或者对象新增删除的数据,间同步到数据的变化因此视图不会变化(利用this.<span class="variable">$set</span>(obj,key,Value)解决)</span><br><span class="line">vue3的响应式拦截原理缺点:</span><br><span class="line">	虽然没有vue2的缺点,但是由于使用proxy,vue3中了所有的数据都是响应式的,有时只需要响应式对象的某一个数据,就比较麻烦</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性二"><a href="#特性二" class="headerlink" title="特性二"></a>特性二</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">v-module的变化</span><br><span class="line">vue2:v-module是:value和@input的语法糖</span><br><span class="line">vue3:v-module是:modleValue和@update:modleValue的语法糖</span><br><span class="line">	 v-module还融合了vue2的.<span class="built_in">sync</span>修饰符,更加便利于父子传参</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性三"><a href="#特性三" class="headerlink" title="特性三"></a>特性三</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">生命周期函数发生变化</span><br><span class="line">vue2 : <span class="function"><span class="title">beforeCreate</span></span>()&#123;&#125; ,<span class="function"><span class="title">created</span></span>()&#123;&#125; ; <span class="function"><span class="title">beforeMount</span></span>()&#123;&#125; ,<span class="function"><span class="title">mounted</span></span>()&#123;&#125; ; </span><br><span class="line">	   <span class="function"><span class="title">beforeUpdate</span></span>()&#123;&#125; ,<span class="function"><span class="title">updated</span></span>()&#123;&#125; ; <span class="function"><span class="title">beforeDestroy</span></span>()&#123;&#125;,<span class="function"><span class="title">destroyed</span></span>()&#123;&#125;</span><br><span class="line">vue3 : setup() : 开始创建组件之前，在 beforeCreate 和 created 之前执行，创建的是 data 和 method;</span><br><span class="line">       <span class="function"><span class="title">onBeforeMount</span></span>()&#123;&#125;,<span class="function"><span class="title">onMounted</span></span>()&#123;&#125;;<span class="function"><span class="title">onBeforeUpdate</span></span>()&#123;&#125;,onUpdated()();</span><br><span class="line">	   <span class="function"><span class="title">onBeforeUnmount</span></span>()&#123;&#125;,<span class="function"><span class="title">onUnmounted</span></span>()&#123;&#125;</span><br><span class="line">变化比较</span><br><span class="line">	名字发生了变化,作用没变,最大的变化就是<span class="function"><span class="title">setup</span></span>()&#123;&#125;取代<span class="function"><span class="title">beforeCreate</span></span>()&#123;&#125;和<span class="function"><span class="title">create</span></span>()&#123;&#125;来创建data</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性四"><a href="#特性四" class="headerlink" title="特性四"></a>特性四</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用方式发生了变化</span><br><span class="line">vue3所有的对象都要放在<span class="function"><span class="title">setup</span></span>()&#123;&#125;中,如果要在模板中使用需要<span class="built_in">return</span>出去,并且vue3没有this</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性五"><a href="#特性五" class="headerlink" title="特性五"></a>特性五</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">响应式数据修饰方法</span><br><span class="line">reactive(obj) : 用来把一个对象定义成响应式对象</span><br><span class="line">ref(num | str | null | undefined | binInt()等): 用来把一个简单数据类型修饰成响应式数据对象</span><br><span class="line">toRefs(obj) : 把对象编程响应式数据对象</span><br><span class="line">toRef(obj,key) : 把对象的其中某一个属性转化成响应式数据</span><br></pre></td></tr></table></figure>
+
+<h2 id="特性六"><a href="#特性六" class="headerlink" title="特性六"></a>特性六</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">所有的非自定义的变量,方法都需要引入</span><br><span class="line">import &#123; onMounted, onUnmounted, reactive, ref, toRef,toRes &#125; from <span class="string">&quot;vue&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="特性七"><a href="#特性七" class="headerlink" title="特性七"></a>特性七</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">计算属性和监听器用法发生改变</span><br><span class="line">computed(&#123;<span class="function"><span class="title">get</span></span>()&#123;&#125; , <span class="function"><span class="title">set</span></span>()&#123;&#125;&#125;) || computed(() =&gt; &#123;&#125;)</span><br><span class="line">watch(obj,() =&gt; &#123;&#125;) || watch(() =&gt; obj.key , () =&gt; &#123;&#125;) || watch([obj,obj1],() =&gt;&#123;&#125;,&#123;deep:<span class="literal">true</span>/false,immediate: <span class="literal">true</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
-    
 
     
     
     
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/myBook/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/myBook/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/6/">6</a><span class="page-number current">7</span>
+  </nav>
+
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -452,25 +498,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '39b36d238f34d30e3592',
-      clientSecret: '0414d46c8f0bd004b5e9e8fde82b4be7f53fe8b0',
-      repo        : 'myBook',
-      owner       : 'toSANYue',
-      admin       : ['toSANYue'],
-      id          : 'd09ba4d538b9f0d136619b92c0084b19',
-        language: '',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 <script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
