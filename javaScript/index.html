@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/myBook/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myBook/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myBook/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/myBook/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myBook/css/main.css">
+
+
+<link rel="stylesheet" href="/myBook/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tosanyue.github.io","root":"/myBook/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":1},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="JavaScript基础简单数据类型1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253a.Number:构造函数Number()    主要方法:        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理是从左到右遍历字符数据,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="javaScript">
+<meta property="og:url" content="https://tosanyue.github.io/myBook/javaScript/index.html">
+<meta property="og:site_name" content="makeBook">
+<meta property="og:description" content="JavaScript基础简单数据类型1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253a.Number:构造函数Number()    主要方法:        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理是从左到右遍历字符数据,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-01T06:34:59.000Z">
+<meta property="article:modified_time" content="2022-08-01T12:14:23.900Z">
+<meta property="article:author" content="lindy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tosanyue.github.io/myBook/javaScript/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>javaScript | makeBook
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<link rel="alternate" href="/myBook/atom.xml" title="makeBook" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/myBook/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">makeBook</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">myBook</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-vue">
+
+    <a href="/myBook/" rel="section"><i class="fa fa-home fa-fw"></i>vue</a>
+
+  </li>
+        <li class="menu-item menu-item-js">
+
+    <a href="/myBook/javaScript/" rel="section"><i class="fa fa-user fa-fw"></i>js</a>
+
+  </li>
+        <li class="menu-item menu-item-html">
+
+    <a href="/myBook/html/" rel="section"><i class="fa fa-tags fa-fw"></i>html</a>
+
+  </li>
+        <li class="menu-item menu-item-css">
+
+    <a href="/myBook/css/" rel="section"><i class="fa fa-th fa-fw"></i>css</a>
+
+  </li>
+        <li class="menu-item menu-item-structure">
+
+    <a href="/myBook/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>structure</a>
+
+  </li>
+        <li class="menu-item menu-item-react">
+
+    <a href="/myBook/react/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>react</a>
+
+  </li>
+        <li class="menu-item menu-item-archive">
+
+    <a href="/myBook/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>archive</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">javaScript
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h2 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h2><h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">a.Number:构造函数Number()</span><br><span class="line">    主要方法:</span><br><span class="line">        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理是从左到右遍历字符数据,如果遇见数字就截取转换,</span><br><span class="line">        		   如果遇见非数字的字符则会立刻停止遍历,抛出NaN,当接受两个参数时可以做进制转换使用</span><br><span class="line">            	   ps:parseInt(<span class="string">&quot;512werwe,xa&quot;</span>) ==&gt; 512 ,Number.parseInt(<span class="string">&quot;wqx512wxa&quot;</span>) ==&gt; NaN</span><br><span class="line">            	   ps:parseInt(<span class="string">&#x27;101&#x27;</span>,2)将二进制101转换成10进制 ==&gt; 5</span><br><span class="line">            	   </span><br><span class="line">        isNaN():判断一个数据能不能被转换成数字Number.isNaN()和isNaN()稍微有些不同,前者是标准化的,后者不是,Number.isNaN()</span><br><span class="line">        会先判断传进来的数据是不是数字,如果是才会进行判断是不是NaN(不会进行隐式转换),而isNaN()会进行隐式转换,然后再进行判断</span><br><span class="line">            ps:isNaN(null) ==&gt; <span class="literal">false</span> ,这里把null转换成0了,Number.isNaN(null) ==&gt; <span class="literal">false</span></span><br><span class="line">            ps:isNaN(undefined) ==&gt; <span class="literal">true</span>,侧面说明undefined不能不管被转换成数字</span><br><span class="line"></span><br><span class="line">        toFixed():保留几位小数(0--100之间)</span><br><span class="line">        toString():Number.toString()将一个数字转换成字符串 (22).toString() ==&gt; <span class="string">&quot;12&quot;</span></span><br><span class="line">        valueOf():换回原来的数据类型js数字的由来:new Number(12) ==&gt; Number&#123;10&#125; Number&#123;10&#125;.valueOf() ==&gt; 12</span><br><span class="line"></span><br><span class="line">    面试题</span><br><span class="line">        js中实现数字 x === x + 1:</span><br><span class="line">             Number.MAX_VALUE === Number.MAX_VALUE + 1</span><br><span class="line">            Infinity === Infinity + 1</span><br><span class="line"></span><br><span class="line">b.String:构造函数String()</span><br><span class="line">    主要方法属性:  </span><br><span class="line">        length:判断字符串的长度,同时也把字符串当作数组来使用</span><br><span class="line">        toString():把一个对象转换成字符串</span><br><span class="line">        valueOf():把对象转换成原始数据类型</span><br><span class="line">        charAt():返回对应索引位置上的字符<span class="string">&#x27;123qwe&#x27;</span>.charAt(5) ==&gt; e</span><br><span class="line">        charCodeAt():(相似的codePointAt())返回对应位置上的编码<span class="string">&#x27;123qwe&#x27;</span>.charCodeAt(5) ==&gt; 101</span><br><span class="line">        indexOf():返回要找的字符的索引,没有返回-1</span><br><span class="line">        slice():返回切割后的新字符串,<span class="string">&#x27;&#x27;</span>123qwe.slice(1,2) ==&gt; <span class="string">&#x27;2&#x27;</span></span><br><span class="line">        concat():连接两个字符串返回新的字符产<span class="string">&#x27;123&#x27;</span>.concat(<span class="string">&#x27;578&#x27;</span>) ==&gt; <span class="string">&#x27;123578&#x27;</span></span><br><span class="line">        fromCodePoint():(相似的fromCharCode())从编码到字符String.fromCharCode(105,108,111,118,101,121,111,117) ==&gt; <span class="string">&#x27;iloveyou&#x27;</span></span><br><span class="line">        inCludes():检查字符串是否含有这个子串,区分大小写</span><br><span class="line">        replace():替换字符,常和正则表达式搭配</span><br><span class="line">        trim():去掉空格</span><br><span class="line">        padEnd():拷贝字符串,多余的部分在结尾用第二个参数填充,默认是空格填充<span class="string">&#x27;Iloveyou&#x27;</span>.padEnd(12,<span class="string">&#x27;a&#x27;</span>) ==&gt; <span class="string">&#x27;Iloveyouaaaa&#x27;</span></span><br><span class="line">        repeat():重复复制字符串<span class="string">&quot;12&quot;</span>.repeat(2) ==&gt; <span class="string">&quot;1212&quot;</span></span><br><span class="line">        <span class="built_in">split</span>():分割字符串,但是和slice()不同,<span class="built_in">split</span>()返回的是分割后的数组<span class="string">&#x27;Iloveyouaaaa&#x27;</span>.<span class="built_in">split</span>(<span class="string">&quot;a&quot;</span>) == &gt; [<span class="string">&#x27;Iloveyou&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>]</span><br><span class="line">        subString():和slice(),subStr()类似</span><br><span class="line">        </span><br><span class="line">c.Boolean:new Boolean().valueOf() ==&gt;  <span class="literal">false</span>; new Boolean().toString() ==&gt; <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line">d.Symbol:不是构造函数,每一个Symbol(value)都是唯一的,绝对不会重复</span><br><span class="line"></span><br><span class="line">e.BigInt:同样不是构造函数,可以用来表示任意的数字,即便这个数字超过了Number.MAX_SAFE_INTEGER,</span><br><span class="line">		 BigInt(90071992547409922n) ==&gt; 90071992547409922,结尾加个n表示大数</span><br><span class="line">		 </span><br><span class="line">f.null:不是全局属性,是一个字面量,表示完全为空,什么都没有</span><br><span class="line"></span><br><span class="line">g.undefined:一个没有被赋值的变量或者方法就是undefined,undefined == null ==&gt; <span class="literal">true</span>,</span><br><span class="line">			函数若是不<span class="built_in">return</span>,则也是undefined,安全的undefined可以通过void 0来获取</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂和数据类型"><a href="#复杂和数据类型" class="headerlink" title="复杂和数据类型"></a>复杂和数据类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">a.Array:创建形式new Array()或者字面量形式</span><br><span class="line">    主要方法属性</span><br><span class="line">        length:找出数组的长度,常用语<span class="keyword">for</span>语句遍历</span><br><span class="line">        <span class="built_in">join</span>():分割数组将诉诸变为字符串和字符串的方法<span class="built_in">split</span>()互补 [1,2,3].<span class="built_in">join</span>(<span class="string">&quot;w&quot;</span>) ==&gt; <span class="string">&#x27;1w2w3&#x27;</span></span><br><span class="line">        map() : 返回一个新数组</span><br><span class="line">        forEach():遍历数组 [1,2,3].forEach((item,index) =&gt; &#123;console.log(item)&#125;) ==&gt; 1,2,3,返回值无,方法里没有返回值就是undefined</span><br><span class="line">        some():筛选元素,有一个符合条件返回<span class="literal">true</span></span><br><span class="line">        every():筛选元素,全部符合条件返回<span class="literal">true</span></span><br><span class="line">        splice():强大,无敌,增删改查,返回操作后的数组,原数组发生改变</span><br><span class="line">            增:[1,2,3].splice(-2,1,5) ==&gt; [1,5,3]</span><br><span class="line">                [1,2,3].splice(2,0,5,5,6) ==&gt; [1,2,5,5,6,3]</span><br><span class="line">            删:[1,2,3].splice(0) ==&gt; [] </span><br><span class="line">                [1,2,3].splice(1) ==&gt; [1] </span><br><span class="line">                [1,2,3].splice(2,1) ==&gt; [1,2]</span><br><span class="line">                [1,2,3].splice(-2,1) ==&gt; [1,3]</span><br><span class="line"></span><br><span class="line">        filter():过滤器,将符合条件的数组元素组合成新的数组</span><br><span class="line">        find():查找第一个符合条件的元素</span><br><span class="line">        from():把伪数组变为真数组</span><br><span class="line">        类似于字符串的方法:</span><br><span class="line">            concat():合并两个数组</span><br><span class="line">            indexOf():查找数组元素,没有返回-1</span><br><span class="line">            inCludes():数组中是否包含这个元素</span><br><span class="line"></span><br><span class="line">        pop():尾巴删除,一次只能删一个,返回删除后的原数组长度</span><br><span class="line">        push():尾巴添加能添加多个常和延展运算符连用,返回增加后原数组的新长度</span><br><span class="line">        <span class="built_in">shift</span>():头部删除和pop()一样</span><br><span class="line">        unshift():头部添加和push()一样</span><br><span class="line">        keys():返回数组中所有元素的索引的集合</span><br><span class="line">            const array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">            const iterator = array1.keys();</span><br><span class="line">            <span class="keyword">for</span> (const key of iterator) &#123;</span><br><span class="line">              console.log(key);&#125; 0,1,2</span><br><span class="line"></span><br><span class="line">        values():返回数组中所有元素的元素的集合</span><br><span class="line">            const array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">            const iterator = array1.values();</span><br><span class="line">            <span class="keyword">for</span> (const value of iterator) &#123;</span><br><span class="line">              console.log(value);</span><br><span class="line">            &#125; a,b,c</span><br><span class="line"></span><br><span class="line">        toString():把数组转换成字符串</span><br><span class="line">        valueOf():返回数据类型本身,用于new的时候将简单数据类型转换成真正的简单数据类型,比如new Number(12).valueOf() ==&gt; 12,而复杂和数据类型无效</span><br><span class="line">        reverse():翻转数组</span><br><span class="line">        <span class="built_in">sort</span>():对数组排序,默认是字典排序</span><br><span class="line">            可以接受一个回调函数摆脱字典排序[1,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;D&quot;</span>,4,3].<span class="built_in">sort</span>((a,b) =&gt; a-b) ==&gt; [1, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, 3, 4] </span><br><span class="line">                [1,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;D&quot;</span>,4,3].<span class="built_in">sort</span>() ==&gt; [1, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, 4, 3]</span><br><span class="line"></span><br><span class="line">主要方法和属性:</span><br><span class="line">    create():可以用于创建对象Object.create(null) ==&gt; &#123;&#125;(该对象完全为空)</span><br><span class="line">        语法:Object.create(a,b),a表示产生的新对象要继承的原型链,b表示对象的描述属性</span><br><span class="line">        Object.create(null,&#123;a:&#123;重要的对象描述信息&#125;&#125;)</span><br><span class="line">        Object.create(null,&#123;a:&#123;value:1,writable:<span class="literal">true</span>,  configurable:<span class="literal">true</span>&#125;&#125;) ==&gt; &#123;a:1&#125;</span><br><span class="line"></span><br><span class="line">    assign():合并多个对象,后面的都赋值给第一个assign(&#123;a:1&#125;,&#123;a:2,b:3&#125;,&#123;d:4&#125;) ==&gt; &#123;a:2,b:3,d:4&#125;</span><br><span class="line">    defineProperty():自定义属性,参数三表示对象的描述信息对象</span><br><span class="line">        面试题:让数字x === x 为<span class="literal">false</span></span><br><span class="line">            window.x = 0</span><br><span class="line">            Object.defineProperty(window,<span class="string">&quot;x&quot;</span>,&#123;<span class="function"><span class="title">get</span></span>()&#123;<span class="built_in">return</span> Math.random()&#125;&#125;)</span><br><span class="line">            此时 x === x 等于<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    defineProperties():和defineProperty不一样的是,不能修改单个属性,只能接受对象的描述信息</span><br><span class="line">        configurable</span><br><span class="line">        <span class="literal">true</span> 只有该属性描述符的类型可以被改变并且该属性可以从对应对象中删除。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        enumerable</span><br><span class="line">        <span class="literal">true</span> 只有在枚举相应对象上的属性时该属性显现。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        value</span><br><span class="line">        与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。</span><br><span class="line">        默认为 undefined.</span><br><span class="line">        writable</span><br><span class="line">        <span class="literal">true</span>只有与该属性相关联的值被(en-US)改变时。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        get</span><br><span class="line">        作为该属性的 getter 函数，如果没有 getter 则为undefined。函数返回值将被用作属性的值。</span><br><span class="line">        默认为 undefined</span><br><span class="line">        <span class="built_in">set</span></span><br><span class="line">        作为属性的 setter 函数，如果没有 setter 则为undefined。函数将仅接受参数赋值给该属性的新值。</span><br><span class="line">        默认为 undefined</span><br><span class="line"></span><br><span class="line">    is():判断两个是不是相等Object.is(1,<span class="string">&quot;1&quot;</span>) ==&gt; <span class="literal">false</span> Object.is(1,1) ==&gt; <span class="literal">true</span></span><br><span class="line">    keys():返回对象的所有键组成的数组Object.keys(&#123;a:1,b:2,c:3&#125;) ==&gt; [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line">    values():返回对象的所有值组成的数组Object.values(&#123;a:1,b:2,c:3&#125;)==&gt; [1,2,3]</span><br><span class="line">    valueOf():和数组的该方法一样</span><br><span class="line">    toString():转换成字符串</span><br></pre></td></tr></table></figure>
+
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">js怎么得到简单数据类型?</span><br><span class="line">	答 : new对应的构造函数,new出来的一定是个对象,然后调用valueOf()看看返回的是不是简单数据类型,如果不是的话在调用toString()</span><br><span class="line">js判断数据类型有几个方法?</span><br><span class="line">	答 : 1.typeof 不准确,null会判定为object,判断的是第一代js存储在计算机中的二进制</span><br><span class="line">		 2.insatnceof 不准确,只能用来判断复杂和数据类型,简单数据类型因为经过valueOf()的处理后,不在具备原型</span><br><span class="line">		 3.constructor原型链继承的DNA,简单来说就是找自身来源于哪里,同样不是和简单数据类型</span><br><span class="line">		 4.Object.prototype.toString.call()完美的判断不会出错</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="javaScript高级"><a href="#javaScript高级" class="headerlink" title="javaScript高级"></a>javaScript高级</h2><h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">查找规则:先找自身有没有,没有就找__proto__,还没有的话就找ptototype</span><br><span class="line">原理:利用复杂数据类型的特点,原型链查找其实是根据prototype和__proto__的地址去查找结果的</span><br><span class="line">补充:存储机制</span><br><span class="line">	1.简单数据类型存放在栈中,复杂数据类型存放在堆中</span><br><span class="line">	2.栈中还存放着堆中复杂数据类型的地址指针,在操作的时候通过栈去找到堆中的复杂数据</span><br><span class="line">	深浅拷贝</span><br><span class="line">	1.简单数据额类型和复杂和数据类型(一层)直接复制都是深拷贝,比如函数传参的时候也是如此</span><br><span class="line">	2.js是值传递函数,在形参接受复制的时候表达式会立即计算,得到结果</span><br><span class="line">画法 : 1.首先要知道new操作符做了什么事情; </span><br><span class="line">	  2.从一个构造函数触发,利用new操作符的性质画出最简单的原型</span><br><span class="line">      3.然后要知道其实prototype和__proto__都是对象,对象在正常情况下一定具有__proto__ (Object.create(null)得到的对象全空)</span><br><span class="line">      4.根据constructor反向推出整个原型链即可</span><br></pre></td></tr></table></figure>
+
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">闭包其实是js模拟私有变量的一个手段,直观来讲就是函数里嵌套函数,内部函数有权访问外部函数变量</span><br><span class="line">vue2中组件data其实就是用了闭包,避免组件复用的时候出现数据干扰</span><br><span class="line">例子:<span class="keyword">function</span> addOne(a)&#123;</span><br><span class="line">  	var one = 1;</span><br><span class="line">  	<span class="keyword">function</span> inner(b)&#123;</span><br><span class="line">    	<span class="built_in">return</span> b + one;</span><br><span class="line">  	&#125;</span><br><span class="line">  	<span class="built_in">return</span> inner(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">解释: 在自己内部调用自身函数就是递归,如果是在自己函数体内最后一步调用自身就叫做尾递归</span><br><span class="line">应用: 1.树形转列表</span><br><span class="line">	    const tranTreeToListData = (a, res = []) =&gt; &#123;</span><br><span class="line">        	a.forEach(item =&gt; &#123;</span><br><span class="line">            	item.children &amp;&amp; tranTreeToListData(item.children, res)//item是对象,对象不能forEach</span><br><span class="line">            	res.push(item)//因为是树形遍历第一次直接push即可,反正只有一个节点</span><br><span class="line">        	&#125;)</span><br><span class="line">        	<span class="built_in">return</span> res</span><br><span class="line">    	&#125;</span><br><span class="line">    	b = tranTreeToListData(list)</span><br><span class="line">    	console.log(<span class="string">&#x27;b&#x27;</span>, b);</span><br><span class="line">     2.列表转树形</span><br><span class="line">      const tranListToTreeData = (list, rootId) =&gt; &#123;</span><br><span class="line">        //根据数据结构的不同需要的参数不同,这里先找pid为空串的,这里为一级再找剩下的的pid等于找到的的<span class="built_in">id</span>,一次递归遍历</span><br><span class="line">        const newArr = []</span><br><span class="line">        list.forEach((item) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (item.pid === rootId) &#123;</span><br><span class="line">                const children = tranListToTreeData(list, item.id)</span><br><span class="line">                //扁平化的数据,父级子级都在同一级别,所以可以直接找item.pid === item.id</span><br><span class="line">                <span class="keyword">if</span> (children.length) &#123;</span><br><span class="line">                    item.children = children//因为这里item是对象</span><br><span class="line">                &#125;</span><br><span class="line">                newArr.push(item)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="built_in">return</span> newArr</span><br><span class="line">    &#125;</span><br><span class="line">    const a = tranListToTreeData(b, <span class="string">&quot;&quot;</span>)</span><br><span class="line">    console.log(<span class="string">&quot;a:&quot;</span>, a);</span><br><span class="line">思路1 : 1.在树形转列表中,一般直接循环展开,将结果放在新的数组中即可</span><br><span class="line">	   2.如果要去掉childen,可以用短路表达式来执行结果</span><br><span class="line">思路2 : 1.在列表转树形中,一般都会有一个根节点或者说是独一无二的数据指向他,name找到这个根节点放进新数组中</span><br><span class="line">	   2.接下来就是找其他节点了,然后查看数据源根节点下的<span class="built_in">id</span>,于其他节点的pid匹配,匹配成功加入到根节点下</span><br><span class="line">	   3.依次类推,不断递归调用自身</span><br><span class="line">	   4.递归一定要注意,每一次的形参值要不一样,否则就超出调用栈了</span><br></pre></td></tr></table></figure>
+
+<h4 id="面向对象和面向过程的个人理解"><a href="#面向对象和面向过程的个人理解" class="headerlink" title="面向对象和面向过程的个人理解"></a>面向对象和面向过程的个人理解</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">面向过程 : 将一个需求拆开,一步一步去完成对应的步骤</span><br><span class="line">	例子 : 计算两个数的和</span><br><span class="line">		首先需要拿到求和的这两个数字</span><br><span class="line">		其次需要利用四则运算的加号运算</span><br><span class="line">		然后将结果<span class="built_in">return</span>出去</span><br><span class="line">面向对象 : es6之前没有面向对象的说法,在es6之后新增class语法专门面向对象开发</span><br><span class="line">	在class中先确定要做多少个功能,写出对应的方法和变量,其次在拆分每一个功能的步骤</span><br><span class="line">	结论 : 面向对象其实是对面向过程的一次封装</span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6及之后"><a href="#ES6及之后" class="headerlink" title="ES6及之后"></a>ES6及之后</h2><h4 id="Proxy与Reflect"><a href="#Proxy与Reflect" class="headerlink" title="Proxy与Reflect"></a>Proxy与Reflect</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">语法: new Proxy(target,handle) target:目标对象 ,handle:处理的对象,该对象里面全是方法,用于处理target的目标属性</span><br><span class="line">Proxy实例方法</span><br><span class="line">    1.get(target,targetProp,[proxy])&#123;&#125; :该方法接受三个参数,target:要处理的目标对象,targetProp:要处理的对象的属性名,</span><br><span class="line">    	proxy:Proxy的实例,拦截对象设置值</span><br><span class="line">    2.<span class="built_in">set</span>(target,targetProp,propValue,[proxy])&#123;/code/严模式下，<span class="built_in">set</span>代理如果没有返回<span class="literal">true</span>，就会报错。&#125;:该方法接受四个参数,</span><br><span class="line">    	target:要处理的目标对象,targetProp:要处理的对象的属性名,propValue:要处理的对象的属性的属性值,proxy:实例本身,拦截对象取值</span><br><span class="line">    3.apply(target,that,arg)&#123;&#125;target:要处理的函数,that:要处理的函数的上下文(this),arg:目标函数的参数数组,</span><br><span class="line">    	不管传的是参数列表还是什么都会被转换成数组,拦截函数的行为call,apply</span><br><span class="line">    4.has(target,targetProp)&#123;&#125;target:目标本身,taegetProp:目标查询的键名</span><br><span class="line">    </span><br><span class="line">    5.construct(target,args,newTarget)&#123;&#125;target:构造函数本身,args:表示当前构造函数的参数对象,</span><br><span class="line">    	通常情况下是数组,newTarget:垢找出来的对象,ps:本方法必须返回一个对对象,拦截new操作的</span><br><span class="line">    6.deleteProtype(target,key)&#123;&#125;target:目标对象,key:目标对象的键名,拦截delete删除属性名的</span><br><span class="line">    </span><br><span class="line">    7.defineProtype(target, key, descriptor)&#123;&#125;target:目标对象,key:目标对象的键名,descriptor:对象的描述信息</span><br><span class="line">    </span><br><span class="line">    8.getOwnPropertyDescriptor(target,key)&#123;&#125;target:目标对象,key:目标对象的键名拦截Object.getOwnPropertyDescriptor</span><br><span class="line">    </span><br><span class="line">    9.getPrototypeOf(target)&#123;&#125;拦截对象上一切对原型的操作</span><br><span class="line">    </span><br><span class="line">    10.isExtensible(target)&#123;&#125;target:目标对象,拦截Object.isExtensible()</span><br><span class="line">    </span><br><span class="line">    11.ownKyes(target)&#123;&#125; target:目标对象,拦截Object.keys(),forin,Object.getOwnPropertyNames(),Object.getOwnPropertySymbols()</span><br><span class="line">    	(自己的key,拦截获所有的可以获取到自己的简明的遍历)</span><br><span class="line">    12.preventExtensions(target)&#123;&#125;target:目标对象 方法拦截Object.preventExtensions()。该方法必须返回一个布尔值，否则会被自动转为布尔值</span><br><span class="line">    </span><br><span class="line">    13.setPrototypeOf()方法主要用来拦截Object.setPrototypeOf()方法。阻止对对象原型的设置</span><br><span class="line"></span><br><span class="line">取消proxy的实例</span><br><span class="line">    <span class="built_in">let</span> target = &#123;&#125;;</span><br><span class="line">    <span class="built_in">let</span> handler = &#123;&#125;;</span><br><span class="line">    <span class="built_in">let</span> &#123;proxy, revoke&#125; = Proxy.revocable(target, handler);</span><br><span class="line">    proxy.foo = 123;</span><br><span class="line">    proxy.foo // 123</span><br><span class="line">    revoke();</span><br><span class="line">    proxy.foo // TypeError: Revoked</span><br><span class="line">    Proxy.revocable():返回一个对象,对象里面具有两个主要数据proxy:是实例本身,revoke是一个回调函数用来取消proxy实例,应用:不能直接访问一个对象需要通过代理,访问之后销毁这个给代理</span><br><span class="line"></span><br><span class="line">this指向:</span><br><span class="line">    通过proxy代理的对象内部的this也会指向proxy</span><br><span class="line"></span><br><span class="line">什么是Reflect:</span><br><span class="line">    reflect是用来还原某些对象的操作的,上面的api和proxy一一对相应,proxy来修改对象的某些操作,而我们总能在reflect上面找到原本的默认行为;</span><br><span class="line">    修改某些对象操作的不合理性,把某些运算符操作改成函数行为</span><br><span class="line">    api:和proxy一一对应(包括函数的形参,表示的意义),但是proxy的api主要是修改行为,而reflect上面的api是和对Object上的方法几乎一样都是原本的功能</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入导出"><a href="#导入导出" class="headerlink" title="导入导出"></a>导入导出</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">导入:import &#123;c ,d ,e&#125; from <span class="string">&#x27;../a/b/c.js&#x27;</span> </span><br><span class="line">导出:<span class="built_in">export</span> &#123;c ,d ,e&#125;</span><br><span class="line">导入:import&#123;c as c1&#125; from <span class="string">&#x27;../a/b/c.vue&#x27;</span> //as给c去个别名</span><br><span class="line">导出:<span class="built_in">export</span> <span class="built_in">let</span> c = 10 //</span><br><span class="line">导入:import a from <span class="string">&#x27;../a/b/c.js&#x27;</span></span><br><span class="line">导出:<span class="built_in">export</span> default const a = <span class="function"><span class="title">function</span></span>()&#123;&#125;  //如果是默认导出,导入的时候就不用加大括号</span><br><span class="line">导入:import * as c from <span class="string">&#x27;../a&#x27;</span>//会把所有的导出全部加载过来c里面保存了所有的变量信息</span><br><span class="line">导出:<span class="built_in">export</span> var a = 0; <span class="built_in">export</span> var b = 0</span><br><span class="line">注意:</span><br><span class="line">    <span class="built_in">export</span>导出的对象默认是动态的,而require不是,如果再导出出去后该变量变化了,导入了该变量的页面上也会发生变化</span><br><span class="line">    import导入只能放在作用域的顶层,如果要判断加载的话一般联合require一起使用</span><br><span class="line">        基于上面的要求.es2020提出了import()函数,可以解决该问题</span><br><span class="line"></span><br><span class="line">浏览器加载规则:</span><br><span class="line">    为了提升用户体验,在加载js脚本的时候采取异步加载:</span><br><span class="line">        关键字:defer和async</span><br><span class="line">            defer:加载页面的时候遇见脚本开始下载,然后直接走去执行下面的代码,等整个页面都加载完毕后,再来执行js脚本,多个defer按照先后顺序执行</span><br><span class="line">            async:记载页面遇见脚本开始下载,然后直接走,当脚本下载完成之后,在回来执行脚本,多个async不法保证加载顺序</span><br><span class="line"></span><br><span class="line">        es6加载机制 &lt;script <span class="built_in">type</span> = <span class="string">&#x27;module&#x27;</span>&gt;&lt;/script&gt;,浏览器遇见<span class="built_in">type</span> = <span class="string">&#x27;module&#x27;</span>吉之岛这是es6代码,浏览器加载es6都是异步的,</span><br><span class="line">        此时相当于加了defer关键字,按照defer的规则执行,但是如果又加了async,那就只会按照async的规则执行</span><br><span class="line"></span><br><span class="line">nodejs和es6导入的不同:</span><br><span class="line">    commenjs导出的是值的拷贝,<span class="built_in">export</span>是引用</span><br><span class="line">    commenjs导出的是一个对象,<span class="built_in">export</span>不是</span><br></pre></td></tr></table></figure>
+
+<h4 id="js遍历的方法总结"><a href="#js遍历的方法总结" class="headerlink" title="js遍历的方法总结"></a>js遍历的方法总结</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.<span class="keyword">for</span> : 啥都能遍历</span><br><span class="line">2.<span class="keyword">while</span> : 循环,也可以遍历</span><br><span class="line">3.do...while : 和<span class="keyword">while</span>一样,区别是条件至少会执行一次</span><br><span class="line">4.forin : 遍历对象的好东西</span><br><span class="line">5.forof : 遍历遍布了迭代器接口的数据</span><br><span class="line">6.Reflect.ownKeys : 所以数据类型都能遍历,包括symbol键值</span><br><span class="line">7.数组方法,forEach,map,find,filter,等等都可以当做遍历使用</span><br><span class="line">8.values(),entries(),,keys()这几个方法在数组对象上都有,搭配forof一起遍历</span><br><span class="line"></span><br><span class="line">补充:原生部署了迭代器的接口有</span><br><span class="line">	String</span><br><span class="line">	Array</span><br><span class="line">	arguments</span><br><span class="line">	Set:字典</span><br><span class="line">	Map:可以看成是集合映射关系</span><br><span class="line">	NodeList:比如dom操作documentquerySlect()等方法获取到的数据的集合</span><br><span class="line">	TypedArray:是描述底层二进制对象的缓冲区的类数组</span><br><span class="line">	只要部署到有迭代器接口的数据都可以用<span class="keyword">for</span> of 遍历和延展运算符</span><br></pre></td></tr></table></figure>
+
+<h2 id="异步操作处理方案"><a href="#异步操作处理方案" class="headerlink" title="异步操作处理方案"></a>异步操作处理方案</h2><h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在es6之前,所有的请求处理都是回调函数来处理的,比如ajax,但是回调函数有个缺点就是如果多次请求,代码复杂繁琐不利于维护书写</span><br></pre></td></tr></table></figure>
+
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">在es6诞生后,为了解决回调地狱的问题,出现了promise</span><br><span class="line">优点:强大,适应性强,减少回调的写法,便于维护,状态改变就不可逆转</span><br><span class="line">缺点:一旦启动promise就无法取消,如果忘记设置回调函数,promise抛出的错误外部看不见</span><br><span class="line">API部署</span><br><span class="line">    1.Promise.resolve(obj):将一个既有的对象转换成promise对象</span><br><span class="line">        obj instanceof  Promise === <span class="literal">true</span> 直接返回obj对象本身</span><br><span class="line">        <span class="string">&#x27;then&#x27;</span> <span class="keyword">in</span> obj === <span class="literal">true</span>  返回一个新的promise对象,然后立即执行这个promise的<span class="keyword">then</span>()方法</span><br><span class="line">        Reflect.has(obj,<span class="keyword">then</span>) === <span class="literal">false</span> ?? obj instanceof Object === <span class="literal">false</span> 返回一个promise对象,状态是resolved</span><br><span class="line">        obj === null ?? obj = undefined 返回一个新的promise 状态也是resolved</span><br><span class="line">        </span><br><span class="line">    2.Promise.reject(err) : 返回一个promise对象,但是状态是rejected</span><br><span class="line">        不管err是什么类型 :返回的错误提示信息都是err本身,也就是说当错误被catch捕捉的时候catch的回调也会接收到err这个对象</span><br><span class="line">        </span><br><span class="line">    3.Promise.try(fn):应用:不管要处理的函数fn是不是异步的,都用<span class="keyword">then</span>来处理</span><br><span class="line">        Promise.try(() =&gt; database.users.get(&#123;<span class="built_in">id</span>: userId&#125;)).<span class="keyword">then</span>(fn1).catch(fn2)</span><br><span class="line">        </span><br><span class="line">    4.Promise.prototype.then():通过前面的resolve()执行的方法后的结果就会被<span class="keyword">then</span>捕捉到,catch是<span class="keyword">then</span>第二个参数的语法糖</span><br><span class="line">    5.Promise.prototype.catch():通过前面的reject()执行的方法后的结果和<span class="keyword">then</span>的错误结果就会被catch捕捉</span><br><span class="line">    6.Promise.prototype.finally():不管咋样,finally内部的函数都会执行</span><br><span class="line">    7.Promise.all(arr):接收一个promise参数数组,全部为真的,就进入<span class="keyword">then</span>,否则就进入catch</span><br><span class="line">        Promise.all().catch()和arr元素的catch互斥,优先选择arr的catch</span><br><span class="line">        arr元素resolve的结果的进入Promise.all().<span class="keyword">then</span></span><br><span class="line"></span><br><span class="line">    8.Promise.race():照样是执行多个promise对象数组,哪个元素先出现结果Promise.race()的就进入对应的回调函数</span><br><span class="line">    9.Promise.allSettled():升级版Promise.all(),可以确定所有的请求是否完成</span><br><span class="line">        const urls = [ /* ... */ ];</span><br><span class="line">        const requests = urls.map(x =&gt; fetch(x));</span><br><span class="line">        try &#123;</span><br><span class="line">          await Promise.all(requests);</span><br><span class="line">          console.log(<span class="string">&#x27;所有请求都成功。&#x27;</span>);</span><br><span class="line">        &#125; catch &#123;</span><br><span class="line">          console.log(<span class="string">&#x27;至少一个请求失败，其他请求可能还没结束。&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    10.Promise.any():也是数组promise参数,一个状态为成功,就成功,所有为失败才为失败,但是不会因为某个数组元素的状态而结束,</span><br><span class="line">       只有当所有的都失败后才会被catch捕捉,状态变为失败状态</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">0.generator函数执行顺序</span><br><span class="line">    还是从函数的开头开始,一直执行到第一次遇见yield,然后结束,第二次从函数开头的地方(如果yield出现在函数结尾的地方)</span><br><span class="line">    或者第一次遇见的yield开始再次执行函数,不是说yield后面的代码就不执行</span><br><span class="line">code0 : </span><br><span class="line">	<span class="keyword">function</span>*<span class="function"><span class="title">f</span></span> ()&#123;</span><br><span class="line">		<span class="keyword">for</span> (var i = 0;<span class="literal">true</span>;i++)&#123;</span><br><span class="line">		var reset = yield console.log(i) // 加入yield后第一次不是赋值,等第二次next(a)进入后a的值赋给reset</span><br><span class="line">		<span class="keyword">if</span> (reset)&#123;i = -1;&#125;</span><br><span class="line">		&#125;&#125;</span><br><span class="line">	var g  = f();</span><br><span class="line">	g.next()//&#123;value:0,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</span><br><span class="line">	g.next()//&#123;value:1,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</span><br><span class="line">	g.next()//&#123;value:2,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</span><br><span class="line">	g.next(<span class="literal">true</span>)//&#123;value:1,<span class="keyword">done</span>:<span class="literal">false</span>&#125;</span><br><span class="line">1.对象不具有iterator接口,想要遍历对象的话,除了直接forin,或者单独拿出对象的键值键名遍历,也可以给对象添加一个迭代器接口</span><br><span class="line">    比如:const obj = &#123;&#125;; obj[Symbol.iterator] = <span class="keyword">function</span>* ()&#123;yield 1; yield 2; yield 3&#125;,</span><br><span class="line">    此时对象obj就具有迭代器接口了,可以用延展运算符来展开yield的值,这个1,2,3其实就是对象的键名</span><br><span class="line">code1 : </span><br><span class="line">	const obj  = &#123;age:<span class="string">&quot;q&quot;</span>,value:<span class="string">&quot;w&quot;</span>,time:<span class="string">&quot;e&quot;</span>,<span class="built_in">date</span>:<span class="string">&quot;r&quot;</span>&#125;</span><br><span class="line">	<span class="keyword">function</span>*t (obj)&#123;</span><br><span class="line">		const keys =  object.keys(obj)</span><br><span class="line">		console.log(keys);</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">let</span> i= 0;i &lt;keys.length;i++)&#123;</span><br><span class="line">		<span class="built_in">let</span> key =  keys[i];</span><br><span class="line">		yield [key,obj[key]];</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">for</span>(const [key,value] of t(obj))&#123;</span><br><span class="line">console.log(key,value);</span><br><span class="line">2.generator的next()方法</span><br><span class="line">    next(a)的参数总是上一个yield的返回值,v8解释器会忽略第一个next()的参数,也就是说next()是作为启动遍历器对象的,不用带参数,带参数也会被忽略</span><br><span class="line">	这也是为什么code0中的最后一行value的值是1</span><br><span class="line">	</span><br><span class="line">3.generator的throw()方法</span><br><span class="line">    throw()接受一个参数,这个参数可以被函数内部的try...catch语句捕捉到,但是由于第一次next()作为generator函数的启动项,</span><br><span class="line">    所以throw()必须至少等待一次next()先执行后在执行,如果不等待next()先执行一次的话,这个generator.throw(a)抛出的错误</span><br><span class="line">    就会被全局的try..catch捕捉,如果全局没有try..catch,或者全局的try..catch在generator.throw(a)之后,那么直接就会报错了</span><br><span class="line">    如果generator内部部署了try...catch的话,当错误被catch捕捉到后,会隐式的调用一次next()方法,也就是说当错误被捕捉不会影响下次遍历的代码执行</span><br><span class="line">    如果generator函数抛出来错误,但是没有被捕捉到,则下次执行.next()时js引擎会认为该函数执行完成了</span><br><span class="line"></span><br><span class="line">4.generator的<span class="built_in">return</span>()方法</span><br><span class="line">    <span class="built_in">return</span>()直接确定generator的最终value返回值,终结generator函数执行</span><br><span class="line">    如果遇见内部有try..finally语句,那么当执行<span class="built_in">return</span>(a)的时候会立即进入到finally,直到每一次next()过后finally执行完成,</span><br><span class="line">    才会自行之前那次的<span class="built_in">return</span>(),相当于中间那次<span class="built_in">return</span>()和finally中最后的yield交换了位置,也就是说finally不管咋样都会被执行</span><br><span class="line">code4 : </span><br><span class="line">	<span class="keyword">function</span>* <span class="function"><span class="title">numbers</span></span> () &#123;</span><br><span class="line">  		yield 1;</span><br><span class="line">  		try &#123;</span><br><span class="line">    		yield 2;</span><br><span class="line">    		yield 3;</span><br><span class="line">  		&#125; finally &#123;</span><br><span class="line">    		yield 4;</span><br><span class="line">    		yield 5;</span><br><span class="line">  		&#125;</span><br><span class="line">  		yield 6;</span><br><span class="line">	&#125;</span><br><span class="line">	var g = numbers();</span><br><span class="line">	g.next() // &#123; value: 1, <span class="keyword">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">	g.next() // &#123; value: 2, <span class="keyword">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">	g.return(7) // &#123; value: 4, <span class="keyword">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">	g.next() // &#123; value: 5, <span class="keyword">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">	g.next() // &#123; value: 7, <span class="keyword">done</span>: <span class="literal">true</span> &#125;</span><br><span class="line">5.next()和throw()和<span class="built_in">return</span>()的相同点总结:以不同的语句去替换掉yield后的语句</span><br><span class="line">6.generator函数的执行:</span><br><span class="line">    a.遇见yield就把yield后面的表达式的值输出在一个对象里&#123;value:输出的值(yield后面的表达式的结果),</span><br><span class="line">    <span class="keyword">done</span>:布尔值(<span class="literal">false</span>表示遍历还没有结束,<span class="literal">true</span>表示结束了)&#125;,当次遍历结束,下次遍历从上一次结束的地方开始,第一次next()yeild的返回值总是undefined</span><br><span class="line">    b.每一次遍历遇见yield就会结束遍历(哪怕一行语句还没有执行完成,也会结束当次遍历,没结束的语句留在下次next()进来执行),</span><br><span class="line">    有几个yield就需要遍历几次(包含<span class="built_in">return</span>),</span><br><span class="line">    c.不管是next(a)还是throw(b)或者是<span class="built_in">return</span>(c)本质上这些参数a,b,c都是去覆盖yield以及后面的表达式,</span><br><span class="line">    next()是将yield表达式替换成一个值。</span><br><span class="line">    	const g = <span class="keyword">function</span>* (x, y) &#123;</span><br><span class="line">  			<span class="built_in">let</span> result = yield x + y;</span><br><span class="line">  			<span class="built_in">return</span> result;</span><br><span class="line">		&#125;;</span><br><span class="line">		const gen = g(1, 2);</span><br><span class="line">		gen.next(); // Object &#123;value: 3, <span class="keyword">done</span>: <span class="literal">false</span>&#125;</span><br><span class="line">		gen.next(1); // Object &#123;value: 1, <span class="keyword">done</span>: <span class="literal">true</span>&#125;</span><br><span class="line">		// 相当于将 <span class="built_in">let</span> result = yield x + y</span><br><span class="line">		// 替换成 <span class="built_in">let</span> result = 1;</span><br><span class="line">    <span class="built_in">return</span>()是将yield表达式替换成一个<span class="built_in">return</span>语句。</span><br><span class="line">    	gen.return(2); // Object &#123;value: 2, <span class="keyword">done</span>: <span class="literal">true</span>&#125;</span><br><span class="line">		// 相当于将 <span class="built_in">let</span> result = yield x + y</span><br><span class="line">		// 替换成 <span class="built_in">let</span> result = <span class="built_in">return</span> 2;</span><br><span class="line">   	throw()是将yield表达式替换成一个throw语句。</span><br><span class="line">   		gen.throw(new Error(<span class="string">&#x27;出错了&#x27;</span>)); // Uncaught Error: 出错了</span><br><span class="line">		// 相当于将 <span class="built_in">let</span> result = yield x + y</span><br><span class="line">		// 替换成 <span class="built_in">let</span> result = throw(new Error(<span class="string">&#x27;出错了&#x27;</span>));</span><br><span class="line"></span><br><span class="line">7.yield*表达式的应用*</span><br><span class="line">    yield*用于在generator内部遍历其他的generator函数或者其他可迭代的数据(数组,dom对象,arguments,字符串,<span class="built_in">set</span>,map,typedArray)</span><br><span class="line">    如果yield*遇见了<span class="built_in">return</span>语句,那么<span class="built_in">return</span>的返回值会当做本体函数的返回值输出</span><br><span class="line"></span><br><span class="line">8.在generator函数赋值的时候只会赋值一次,并且两个赋值后再无关联,被赋值的变量在遍历结束后,将会失效,值将不会存在,</span><br><span class="line">  状态将变成closed,不可用于下一次遍历</span><br><span class="line"></span><br><span class="line">9.异步generator函数:(了解)</span><br><span class="line">    前面的generator返回的都是同步的遍历器,本身也是一个同步函数,而异步的generator函数其实就是同步的generator前面加上async</span><br><span class="line">    异步和同步的不同点:</span><br><span class="line">        同步的generator函数的next()是及时的,执行到yield就必须马上得出值;而异步的generator的next()是异步操作,返回promise对象,可以用					<span class="keyword">then</span>,catch,finally等api来处理结果;同步的遍历器用<span class="keyword">for</span> of遍历,一步的遍历器用<span class="keyword">for</span> await of遍历</span><br></pre></td></tr></table></figure>
+
+<h4 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.出现:由于写generator比较复杂,而且执行情况难以控制,抛开node的co模块,前端要直接用同步写异步的话,就会非常复杂,async应运而生</span><br><span class="line">2.是什么:async其实是generator函数的语法糖,async其实替换了generator函数的*,而await替换了yiled</span><br><span class="line">3.有何优点:</span><br><span class="line">    1.generator函数必须依靠执行器自动执行,否则的话就需要调用next()来执行,而async自带执行器</span><br><span class="line">    2.async和await语义比*和yiled更加明确async表示有异步操作,await表示等待异步执行完</span><br><span class="line">    3.async返回值就是promise,而generator函数返回遍历器,操作上比generator方便一百倍</span><br><span class="line">    4.generator函数在执行器上执行的时候每一个yield后面都必须是一个promise或thunk函数,而async不用</span><br><span class="line">        什么是thunk函数:由于js是传值调用,这时候把这个尚未计算得值放入到一个临时函数中,这个临时函数就是thunk函数</span><br><span class="line">4.**一些简单的注意**</span><br><span class="line">    1.由于返回的是promise对象,所以promise该有的特性async都有(当一个async函数内部有多个await时,如果遇见了错误后面的await不会执行,</span><br><span class="line">      遇见不是promise但是有点<span class="keyword">then</span>()方法的对象,也被视为promise),同时awiat后面的代码会被解释器认为是微任务</span><br><span class="line">    2.当状态为成功时,<span class="built_in">return</span>的语句后的值会被<span class="keyword">then</span>(a)a接收到,失败状态时不用teturn 直接将失败的结果拿到catch(b)b中</span><br><span class="line">    3.async要和await连用,必须是最近的,但是async可以单独在立即执行函数中执行</span><br><span class="line">    4.目前有个语法提案await可以单独使用,作为顶层awiat一般用于import加载的使用,解决异步加载</span><br></pre></td></tr></table></figure>
+
+<h4 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">promise的最简单写法:</span><br><span class="line">	 class MyPromise &#123;</span><br><span class="line">            state = null  //保存状态</span><br><span class="line">            pending = null  // 三重状态</span><br><span class="line">            resolve = null</span><br><span class="line">            reject = null</span><br><span class="line">            resolveCallbacks = null  //成功的回调数组</span><br><span class="line">            rejectCallbacks = null //失败的回调数组</span><br><span class="line">            value = null  //保存回调函数的参数值</span><br><span class="line">            constructor(failOrSuccess) &#123;</span><br><span class="line">                this.pending = <span class="string">&#x27;pending&#x27;</span></span><br><span class="line">                this.resolve = <span class="string">&#x27;resolve&#x27;</span></span><br><span class="line">                this.reject = <span class="string">&#x27;reject&#x27;</span></span><br><span class="line">                this.state = this.pending</span><br><span class="line">                this.resolveCallbacks = []</span><br><span class="line">                this.rejectCallbacks = []</span><br><span class="line">                <span class="keyword">if</span> (failOrSuccess &amp;&amp; failOrSuccess instanceof Function) &#123;  //参数是不是存不存在,存在了是不是函数</span><br><span class="line">                    try &#123;</span><br><span class="line">                        failOrSuccess(this.myResolve, this.myReject)  //执行该函数</span><br><span class="line">                    &#125; catch (error) &#123;</span><br><span class="line">                        this.myReject(error)  //捕捉错误</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    throw new TypeError(`promise argument <span class="variable">$&#123;failOrSuccess&#125;</span> must be a <span class="keyword">function</span>`) //如果传入的参数不是函数,抛出一个错误</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            myResolve = (data) =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.pending) &#123;  //状态是等待</span><br><span class="line">                    this.state = this.resolve  //把状态改为完成</span><br><span class="line">                    this.value = data</span><br><span class="line">                    this.resolveCallbacks.map(item =&gt; item(this.value))//保存<span class="keyword">then</span>中的回调并且执行</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">return</span>  //如果状态不是等待状态,直接<span class="built_in">return</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            myReject = (data) =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.pending) &#123;</span><br><span class="line">                    this.state = this.reject</span><br><span class="line">                    this.value = data</span><br><span class="line">                    this.rejectCallbacks.map(item =&gt; item(this.value))//保存catch后的回调并且执行</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">return</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">then</span> = (success, fail) =&gt; &#123;</span><br><span class="line">                success = success instanceof Function ? success : success =&gt; success</span><br><span class="line">                fail = fail instanceof Function ? fail : fail =&gt; fail</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.pending) &#123;</span><br><span class="line">                    this.resolveCallbacks.push(success)</span><br><span class="line">                    this.rejectCallbacks.push(fail)  //then catch finally 都是接受一个回调函数,如果不是回调函数的话就会默认转换成 x =&gt; x</span><br><span class="line">                    // <span class="built_in">return</span> new MyPromise((resolve, reject) =&gt; &#123; resolve() &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.resolve) &#123;</span><br><span class="line">                    success(this.value)</span><br><span class="line">                    // <span class="built_in">return</span> this.then</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    fail(this.value)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            catch = (fail) =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.pending) &#123;</span><br><span class="line">                    this.rejectCallbacks.push(fail)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (this.state === this.reject) &#123;</span><br><span class="line">                    fail(this.value)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        const p = new MyPromise((resolve, reject) =&gt; &#123;</span><br><span class="line">            setTimeout(() =&gt; &#123;</span><br><span class="line">                resolve(12)</span><br><span class="line">            &#125;, 0)</span><br><span class="line">        &#125;)</span><br><span class="line">        p.then(v =&gt; &#123;</span><br><span class="line">            console.log(v)</span><br><span class="line">            <span class="built_in">return</span> p</span><br><span class="line">        &#125;)</span><br><span class="line">        p.then(() =&gt; &#123;</span><br><span class="line">            console.log(13)</span><br><span class="line">            <span class="built_in">return</span> p</span><br><span class="line">        &#125;)</span><br><span class="line">//不能连续调用,只实现了<span class="keyword">then</span>,catch,以及promise的基本使用</span><br></pre></td></tr></table></figure>
+
+<h2 id="ts基础"><a href="#ts基础" class="headerlink" title="ts基础"></a>ts基础</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">一:背景</span><br><span class="line">    1.ts是js的超集,出自微软,vscode支持极好,ts语法包含js所有的语法,因此js能用的ts也能</span><br><span class="line"></span><br><span class="line">二:基本语法</span><br><span class="line">    1.数字定义</span><br><span class="line">        var a : number = 10  //定义数字</span><br><span class="line"></span><br><span class="line">    2.字符串定义</span><br><span class="line">        <span class="built_in">let</span> b : string = <span class="string">&quot;10&quot;</span> //定义字符串</span><br><span class="line"></span><br><span class="line">    3.null定义</span><br><span class="line">        const c : null = null </span><br><span class="line"></span><br><span class="line">    4.undefined定义</span><br><span class="line">        const d : undefined = undefined</span><br><span class="line"></span><br><span class="line">    5.数组定义</span><br><span class="line">        const arr : number[] = [1,2,3,4,5,6]//必须全是数字数组才行,数组元素数量不限</span><br><span class="line">        const arr : string[] = [<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>,<span class="string">&quot;3&quot;</span>,<span class="string">&quot;4&quot;</span>]//必须全是字符数组</span><br><span class="line">        const arr : (number | string | null )[] = [1, 2, 3, <span class="string">&quot;4&quot;</span>]</span><br><span class="line">        //数据类型,number,string,object,boolean,null,undefined</span><br><span class="line"></span><br><span class="line">    6.元组定义</span><br><span class="line">        const tuple :[number,string,boolean] = [1,<span class="string">&quot;1&quot;</span>,<span class="literal">false</span>]//必须是对应位置上的数据类型</span><br><span class="line">        //元组类型:确定数组的长度和各个位置的数据类型</span><br><span class="line"></span><br><span class="line">    7.对象定义</span><br><span class="line">        const obj : object = &#123;hello:<span class="string">&quot;andy&quot;</span>,hi:<span class="string">&quot;red&quot;</span>&#125; //定义对象</span><br><span class="line"></span><br><span class="line">    8.方法定义</span><br><span class="line">        const fn : void = <span class="function"><span class="title">function</span></span>()&#123;&#125; // 定义一个没有返回值的方法</span><br><span class="line">        const a = (a:number,b:number):void(返回值类型) =&gt; &#123;&#125;</span><br><span class="line">        <span class="keyword">function</span> w(params: number) &#123;console.log(params)&#125; // 定义一般的方法</span><br><span class="line">        </span><br><span class="line">    9.枚举  enum关键字,声明 ,其实是一个对象</span><br><span class="line">    10断言 关键字 as ,作用是缩小可选择范围,人话就是:断言是告诉编译器这个变量的具体类型是什么</span><br><span class="line"></span><br><span class="line">三.</span><br><span class="line">    对于复杂的数据类型的类型定义</span><br><span class="line">        <span class="built_in">type</span>  a = (number | string | null )[]  </span><br><span class="line">        const arr : a = [1,2,3,<span class="string">&#x27;4&#x27;</span>,<span class="string">&#x27;5&#x27;</span>,null]</span><br><span class="line"></span><br><span class="line">    interface和<span class="built_in">type</span>一样,只是不要等号</span><br><span class="line">    typeof 在类型中打印的就是类型,在其他环境就是数据类型</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">JavaScript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">简单数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.0.2.</span> <span class="nav-text">复杂和数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.0.3.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javaScript%E9%AB%98%E7%BA%A7"><span class="nav-number">2.</span> <span class="nav-text">javaScript高级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="nav-number">2.0.1.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">2.0.2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">2.0.3.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3"><span class="nav-number">2.0.4.</span> <span class="nav-text">面向对象和面向过程的个人理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E5%8F%8A%E4%B9%8B%E5%90%8E"><span class="nav-number">3.</span> <span class="nav-text">ES6及之后</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Proxy%E4%B8%8EReflect"><span class="nav-number">3.0.1.</span> <span class="nav-text">Proxy与Reflect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA"><span class="nav-number">3.0.2.</span> <span class="nav-text">导入导出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js%E9%81%8D%E5%8E%86%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-number">3.0.3.</span> <span class="nav-text">js遍历的方法总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">异步操作处理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0"><span class="nav-number">4.0.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">4.0.2.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator"><span class="nav-number">4.0.3.</span> <span class="nav-text">Generator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#async%E5%87%BD%E6%95%B0"><span class="nav-number">4.0.4.</span> <span class="nav-text">async函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%91%E6%88%98"><span class="nav-number">4.0.5.</span> <span class="nav-text">挑战</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ts%E5%9F%BA%E7%A1%80"><span class="nav-number">5.</span> <span class="nav-text">ts基础</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lindy"
+      src="/myBook/images/myhead.jpg">
+  <p class="site-author-name" itemprop="name">lindy</p>
+  <div class="site-description" itemprop="description">博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myBook/archives">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lindy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">16k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">14 分钟</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/myBook/lib/anime.min.js"></script>
+  <script src="/myBook/lib/velocity/velocity.min.js"></script>
+  <script src="/myBook/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/myBook/js/utils.js"></script>
+
+<script src="/myBook/js/motion.js"></script>
+
+
+<script src="/myBook/js/schemes/pisces.js"></script>
+
+
+<script src="/myBook/js/next-boot.js"></script>
+
+
+  <script defer src="/myBook/lib/three/three.min.js"></script>
+    <script defer src="/myBook/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/myBook/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '39b36d238f34d30e3592',
+      clientSecret: '0414d46c8f0bd004b5e9e8fde82b4be7f53fe8b0',
+      repo        : 'myBook',
+      owner       : 'toSANYue',
+      admin       : ['toSANYue'],
+      id          : '8d0831ab23534858d40cfa175033e069',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+<script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
