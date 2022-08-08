@@ -28,7 +28,7 @@
 <meta property="og:description" content="特性一1234567891011数据的响应式原理变化了vue2:利用了es6的Object.defineProperty()方法	语法:Object.defineProperty(obj ,key ,&amp;#123;get()&amp;#123; return newValue&amp;#125; ,set(value)&amp;#123;&amp;#125;&amp;#125;)vue3:利用了es6的Proxy代理器对象,	语法 : c">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-01T04:39:46.000Z">
-<meta property="article:modified_time" content="2022-08-01T05:28:27.339Z">
+<meta property="article:modified_time" content="2022-08-04T14:15:40.457Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
@@ -229,10 +229,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-01 12:39:46 / 修改时间：13:28:27" itemprop="dateCreated datePublished" datetime="2022-08-01T12:39:46+08:00">2022-08-01</time>
+              <time title="创建时间：2022-08-01 12:39:46" itemprop="dateCreated datePublished" datetime="2022-08-01T12:39:46+08:00">2022-08-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-04 22:15:40" itemprop="dateModified" datetime="2022-08-04T22:15:40+08:00">2022-08-04</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -247,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,6 +285,8 @@
 <h2 id="特性六"><a href="#特性六" class="headerlink" title="特性六"></a>特性六</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">所有的非自定义的变量,方法都需要引入</span><br><span class="line">import &#123; onMounted, onUnmounted, reactive, ref, toRef,toRes &#125; from <span class="string">&quot;vue&quot;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="特性七"><a href="#特性七" class="headerlink" title="特性七"></a>特性七</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">计算属性和监听器用法发生改变</span><br><span class="line">computed(&#123;<span class="function"><span class="title">get</span></span>()&#123;&#125; , <span class="function"><span class="title">set</span></span>()&#123;&#125;&#125;) || computed(() =&gt; &#123;&#125;)</span><br><span class="line">watch(obj,() =&gt; &#123;&#125;) || watch(() =&gt; obj.key , () =&gt; &#123;&#125;) || watch([obj,obj1],() =&gt;&#123;&#125;,&#123;deep:<span class="literal">true</span>/false,immediate: <span class="literal">true</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">当vue-devtools不显示时,在入口文件处添加:</span><br><span class="line">	// <span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>) &#123;</span><br><span class="line"></span><br><span class="line">	//     <span class="keyword">if</span> (<span class="string">&#x27;__VUE_DEVTOOLS_GLOBAL_HOOK__&#x27;</span> <span class="keyword">in</span> win) &#123;</span><br><span class="line"></span><br><span class="line">	//         win.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = app</span><br><span class="line"></span><br><span class="line">	//     &#125;</span><br><span class="line"></span><br><span class="line">	// &#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -378,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">特性一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">特性二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%89"><span class="nav-number">3.</span> <span class="nav-text">特性三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E5%9B%9B"><span class="nav-number">4.</span> <span class="nav-text">特性四</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%BA%94"><span class="nav-number">5.</span> <span class="nav-text">特性五</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E5%85%AD"><span class="nav-number">6.</span> <span class="nav-text">特性六</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%83"><span class="nav-number">7.</span> <span class="nav-text">特性七</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">特性一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">特性二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%89"><span class="nav-number">3.</span> <span class="nav-text">特性三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E5%9B%9B"><span class="nav-number">4.</span> <span class="nav-text">特性四</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%BA%94"><span class="nav-number">5.</span> <span class="nav-text">特性五</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E5%85%AD"><span class="nav-number">6.</span> <span class="nav-text">特性六</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%80%A7%E4%B8%83"><span class="nav-number">7.</span> <span class="nav-text">特性七</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">7.1.</span> <span class="nav-text">注意点</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -449,7 +457,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">15 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
