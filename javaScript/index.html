@@ -28,7 +28,7 @@
 <meta property="og:description" content="JavaScript基础简单数据类型1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253a.&amp;#x27;Number&amp;#x27;:构造函数Number()    主要方法:        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-01T06:34:59.000Z">
-<meta property="article:modified_time" content="2022-08-06T14:22:53.956Z">
+<meta property="article:modified_time" content="2022-08-09T04:09:58.688Z">
 <meta property="article:author" content="lindy">
 <meta name="twitter:card" content="summary">
 
@@ -45,8 +45,7 @@
   };
 </script>
 
-  <title>javaScript | makeBook
-</title>
+  <title>javaScript | makeBook</title>
   
 
 
@@ -143,14 +142,14 @@
     <a href="/myBook/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>structure</a>
 
   </li>
+        <li class="menu-item menu-item-items">
+
+    <a href="/myBook/items" rel="section"><i class="fa fa-sitemap fa-fw"></i>items</a>
+
+  </li>
         <li class="menu-item menu-item-react">
 
     <a href="/myBook/react/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>react</a>
-
-  </li>
-        <li class="menu-item menu-item-archive">
-
-    <a href="/myBook/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>archive</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -203,30 +202,79 @@
   
   
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">javaScript
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tosanyue.github.io/myBook/javaScript/index.html">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myBook/images/myhead.jpg">
+      <meta itemprop="name" content="lindy">
+      <meta itemprop="description" content="博客">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="makeBook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          javaScript
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-01 14:34:59" itemprop="dateCreated datePublished" datetime="2022-08-01T14:34:59+08:00">2022-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-09 12:09:58" itemprop="dateModified" datetime="2022-08-09T12:09:58+08:00">2022-08-09</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>20k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>19 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-      
-      <div class="post-body">
-          <h2 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h2><h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">a.<span class="string">&#x27;Number&#x27;</span>:构造函数Number()</span><br><span class="line">    主要方法:</span><br><span class="line">        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理是从左到右遍历字符数据,如果遇见数字就截取转换,</span><br><span class="line">        		   如果遇见非数字的字符则会立刻停止遍历,抛出NaN,当接受两个参数时可以做进制转换使用</span><br><span class="line">            	   ps:parseInt(<span class="string">&quot;512werwe,xa&quot;</span>) ==&gt; 512 ,Number.parseInt(<span class="string">&quot;wqx512wxa&quot;</span>) ==&gt; NaN</span><br><span class="line">            	   ps:parseInt(<span class="string">&#x27;101&#x27;</span>,2)将二进制101转换成10进制 ==&gt; 5</span><br><span class="line">            	   </span><br><span class="line">        isNaN():判断一个数据能不能被转换成数字Number.isNaN()和isNaN()稍微有些不同,前者是标准化的,后者不是,Number.isNaN()</span><br><span class="line">        会先判断传进来的数据是不是数字,如果是才会进行判断是不是NaN(不会进行隐式转换),而isNaN()会进行隐式转换,然后再进行判断</span><br><span class="line">            ps:isNaN(null) ==&gt; <span class="literal">false</span> ,这里把null转换成0了,Number.isNaN(null) ==&gt; <span class="literal">false</span></span><br><span class="line">            ps:isNaN(undefined) ==&gt; <span class="literal">true</span>,侧面说明undefined不能不管被转换成数字</span><br><span class="line"></span><br><span class="line">        toFixed():保留几位小数(0--100之间)</span><br><span class="line">        toString():Number.toString()将一个数字转换成字符串 (22).toString() ==&gt; <span class="string">&quot;12&quot;</span></span><br><span class="line">        valueOf():换回原来的数据类型js数字的由来:new Number(12) ==&gt; Number&#123;10&#125; Number&#123;10&#125;.valueOf() ==&gt; 12</span><br><span class="line"></span><br><span class="line">    面试题</span><br><span class="line">        js中实现数字 x === x + 1:</span><br><span class="line">             Number.MAX_VALUE === Number.MAX_VALUE + 1</span><br><span class="line">            Infinity === Infinity + 1</span><br><span class="line"></span><br><span class="line">b.<span class="string">&#x27;String&#x27;</span>:构造函数String()</span><br><span class="line">    主要方法属性:  </span><br><span class="line">        length:判断字符串的长度,同时也把字符串当作数组来使用</span><br><span class="line">        toString():把一个对象转换成字符串</span><br><span class="line">        valueOf():把对象转换成原始数据类型</span><br><span class="line">        charAt():返回对应索引位置上的字符<span class="string">&#x27;123qwe&#x27;</span>.charAt(5) ==&gt; e</span><br><span class="line">        charCodeAt():(相似的codePointAt())返回对应位置上的编码<span class="string">&#x27;123qwe&#x27;</span>.charCodeAt(5) ==&gt; 101</span><br><span class="line">        indexOf():返回要找的字符的索引,没有返回-1</span><br><span class="line">        slice():返回切割后的新字符串,<span class="string">&#x27;&#x27;</span>123qwe.slice(1,2) ==&gt; <span class="string">&#x27;2&#x27;</span></span><br><span class="line">        concat():连接两个字符串返回新的字符产<span class="string">&#x27;123&#x27;</span>.concat(<span class="string">&#x27;578&#x27;</span>) ==&gt; <span class="string">&#x27;123578&#x27;</span></span><br><span class="line">        fromCodePoint():(相似的fromCharCode())从编码到字符String.fromCharCode(105,108,111,118,101,121,111,117) ==&gt; <span class="string">&#x27;iloveyou&#x27;</span></span><br><span class="line">        inCludes():检查字符串是否含有这个子串,区分大小写</span><br><span class="line">        replace():替换字符,常和正则表达式搭配</span><br><span class="line">        trim():去掉空格</span><br><span class="line">        padEnd():拷贝字符串,多余的部分在结尾用第二个参数填充,默认是空格填充<span class="string">&#x27;Iloveyou&#x27;</span>.padEnd(12,<span class="string">&#x27;a&#x27;</span>) ==&gt; <span class="string">&#x27;Iloveyouaaaa&#x27;</span></span><br><span class="line">        repeat():重复复制字符串<span class="string">&quot;12&quot;</span>.repeat(2) ==&gt; <span class="string">&quot;1212&quot;</span></span><br><span class="line">        <span class="built_in">split</span>():分割字符串,但是和slice()不同,<span class="built_in">split</span>()返回的是分割后的数组<span class="string">&#x27;Iloveyouaaaa&#x27;</span>.<span class="built_in">split</span>(<span class="string">&quot;a&quot;</span>) == &gt; [<span class="string">&#x27;Iloveyou&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>]</span><br><span class="line">        subString():和slice(),subStr()类似</span><br><span class="line">        </span><br><span class="line">c.<span class="string">&#x27;Boolean&#x27;</span>:new Boolean().valueOf() ==&gt;  <span class="literal">false</span>; new Boolean().toString() ==&gt; <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line">d.<span class="string">&#x27;Symbol&#x27;</span>:不是构造函数,每一个Symbol(value)都是唯一的,绝对不会重复</span><br><span class="line"></span><br><span class="line">e.<span class="string">&#x27;BigInt&#x27;</span>:同样不是构造函数,可以用来表示任意的数字,即便这个数字超过了Number.MAX_SAFE_INTEGER,</span><br><span class="line">		 BigInt(90071992547409922n) ==&gt; 90071992547409922,结尾加个n表示大数</span><br><span class="line">		 </span><br><span class="line">f.<span class="string">&#x27;null&#x27;</span>:不是全局属性,是一个字面量,表示完全为空,什么都没有</span><br><span class="line"></span><br><span class="line">g.<span class="string">&#x27;undefined&#x27;</span>:一个没有被赋值的变量或者方法就是undefined,undefined == null ==&gt; <span class="literal">true</span>,</span><br><span class="line">			函数若是不<span class="built_in">return</span>,则也是undefined,安全的undefined可以通过void 0来获取</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h2><h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">a.<span class="string">&#x27;Number&#x27;</span>:构造函数Number()</span><br><span class="line">    主要方法:</span><br><span class="line">        parseInt():负责将一个数据转换成整数,但是并不严格,执行原理是从左到右遍历字符数据,如果遇见数字就截取转换,</span><br><span class="line">        		   如果遇见非数字的字符则会立刻停止遍历,抛出NaN,当接受两个参数时可以做进制转换使用</span><br><span class="line">            	   ps:parseInt(<span class="string">&quot;512werwe,xa&quot;</span>) ==&gt; 512 ,Number.parseInt(<span class="string">&quot;wqx512wxa&quot;</span>) ==&gt; NaN</span><br><span class="line">            	   ps:parseInt(<span class="string">&#x27;101&#x27;</span>,2)将二进制101转换成10进制 ==&gt; 5</span><br><span class="line">            	   </span><br><span class="line">        isNaN():判断一个数据能不能被转换成数字Number.isNaN()和isNaN()稍微有些不同,前者是标准化的,后者不是,Number.isNaN()</span><br><span class="line">        会先判断传进来的数据是不是数字,如果是才会进行判断是不是NaN(不会进行隐式转换),而isNaN()会进行隐式转换,然后再进行判断</span><br><span class="line">            ps:isNaN(null) ==&gt; <span class="literal">false</span> ,这里把null转换成0了,Number.isNaN(null) ==&gt; <span class="literal">false</span></span><br><span class="line">            ps:isNaN(undefined) ==&gt; <span class="literal">true</span>,侧面说明undefined不能不管被转换成数字</span><br><span class="line"></span><br><span class="line">        toFixed():保留几位小数(0--100之间)</span><br><span class="line">        toString():Number.toString()将一个数字转换成字符串 (22).toString() ==&gt; <span class="string">&quot;12&quot;</span></span><br><span class="line">        valueOf():换回原来的数据类型js数字的由来:new Number(12) ==&gt; Number&#123;10&#125; Number&#123;10&#125;.valueOf() ==&gt; 12</span><br><span class="line"></span><br><span class="line">    面试题</span><br><span class="line">        js中实现数字 x === x + 1:</span><br><span class="line">             Number.MAX_VALUE === Number.MAX_VALUE + 1</span><br><span class="line">            Infinity === Infinity + 1</span><br><span class="line"></span><br><span class="line">b.<span class="string">&#x27;String&#x27;</span>:构造函数String()</span><br><span class="line">    主要方法属性:  </span><br><span class="line">        length:判断字符串的长度,同时也把字符串当作数组来使用</span><br><span class="line">        toString():把一个对象转换成字符串</span><br><span class="line">        valueOf():把对象转换成原始数据类型</span><br><span class="line">        charAt():返回对应索引位置上的字符<span class="string">&#x27;123qwe&#x27;</span>.charAt(5) ==&gt; e</span><br><span class="line">        charCodeAt():(相似的codePointAt())返回对应位置上的编码<span class="string">&#x27;123qwe&#x27;</span>.charCodeAt(5) ==&gt; 101</span><br><span class="line">        indexOf():返回要找的字符的索引,没有返回-1</span><br><span class="line">        slice():返回切割后的新字符串,<span class="string">&#x27;&#x27;</span>123qwe.slice(1,2) ==&gt; <span class="string">&#x27;2&#x27;</span></span><br><span class="line">        concat():连接两个字符串返回新的字符产<span class="string">&#x27;123&#x27;</span>.concat(<span class="string">&#x27;578&#x27;</span>) ==&gt; <span class="string">&#x27;123578&#x27;</span></span><br><span class="line">        fromCodePoint():(相似的fromCharCode())从编码到字符String.fromCharCode(105,108,111,118,101,121,111,117) ==&gt; <span class="string">&#x27;iloveyou&#x27;</span></span><br><span class="line">        inCludes():检查字符串是否含有这个子串,区分大小写</span><br><span class="line">        replace():替换字符,常和正则表达式搭配</span><br><span class="line">        trim():去掉空格</span><br><span class="line">        padEnd():拷贝字符串,多余的部分在结尾用第二个参数填充,默认是空格填充<span class="string">&#x27;Iloveyou&#x27;</span>.padEnd(12,<span class="string">&#x27;a&#x27;</span>) ==&gt; <span class="string">&#x27;Iloveyouaaaa&#x27;</span></span><br><span class="line">        repeat():重复复制字符串<span class="string">&quot;12&quot;</span>.repeat(2) ==&gt; <span class="string">&quot;1212&quot;</span></span><br><span class="line">        <span class="built_in">split</span>():分割字符串,但是和slice()不同,<span class="built_in">split</span>()返回的是分割后的数组<span class="string">&#x27;Iloveyouaaaa&#x27;</span>.<span class="built_in">split</span>(<span class="string">&quot;a&quot;</span>) == &gt; [<span class="string">&#x27;Iloveyou&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>]</span><br><span class="line">        subString():和slice(),subStr()类似</span><br><span class="line">        </span><br><span class="line">c.<span class="string">&#x27;Boolean&#x27;</span>:new Boolean().valueOf() ==&gt;  <span class="literal">false</span>; new Boolean().toString() ==&gt; <span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line">d.<span class="string">&#x27;Symbol&#x27;</span>:不是构造函数,每一个Symbol(value)都是唯一的,绝对不会重复</span><br><span class="line"></span><br><span class="line">e.<span class="string">&#x27;BigInt&#x27;</span>:同样不是构造函数,可以用来表示任意的数字,即便这个数字超过了Number.MAX_SAFE_INTEGER,</span><br><span class="line">		 BigInt(90071992547409922n) ==&gt; 90071992547409922,结尾加个n表示大数</span><br><span class="line">		 </span><br><span class="line">f.<span class="string">&#x27;null&#x27;</span>:不是全局属性,是一个字面量,表示完全为空,什么都没有</span><br><span class="line"></span><br><span class="line">g.<span class="string">&#x27;undefined&#x27;</span>:一个没有被赋值的变量或者方法就是undefined,undefined == null ==&gt; <span class="literal">true</span>,</span><br><span class="line">			函数若是不<span class="built_in">return</span>,则也是undefined,安全的undefined可以通过void 0来获取</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="复杂和数据类型"><a href="#复杂和数据类型" class="headerlink" title="复杂和数据类型"></a>复杂和数据类型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">a.<span class="string">&#x27;Array&#x27;</span>:创建形式new Array()或者字面量形式</span><br><span class="line">    主要方法属性</span><br><span class="line">        length:找出数组的长度,常用语<span class="keyword">for</span>语句遍历</span><br><span class="line">        <span class="built_in">join</span>():分割数组将诉诸变为字符串和字符串的方法<span class="built_in">split</span>()互补 [1,2,3].<span class="built_in">join</span>(<span class="string">&quot;w&quot;</span>) ==&gt; <span class="string">&#x27;1w2w3&#x27;</span></span><br><span class="line">        map() : 返回一个新数组</span><br><span class="line">        forEach():遍历数组 [1,2,3].forEach((item,index) =&gt; &#123;console.log(item)&#125;) ==&gt; 1,2,3,返回值无,方法里没有返回值就是undefined</span><br><span class="line">        some():筛选元素,有一个符合条件返回<span class="literal">true</span></span><br><span class="line">        every():筛选元素,全部符合条件返回<span class="literal">true</span></span><br><span class="line">        splice():强大,无敌,增删改查,返回操作后的数组,原数组发生改变</span><br><span class="line">            增:[1,2,3].splice(-2,1,5) ==&gt; [1,5,3]</span><br><span class="line">                [1,2,3].splice(2,0,5,5,6) ==&gt; [1,2,5,5,6,3]</span><br><span class="line">            删:[1,2,3].splice(0) ==&gt; [] </span><br><span class="line">                [1,2,3].splice(1) ==&gt; [1] </span><br><span class="line">                [1,2,3].splice(2,1) ==&gt; [1,2]</span><br><span class="line">                [1,2,3].splice(-2,1) ==&gt; [1,3]</span><br><span class="line"></span><br><span class="line">        filter():过滤器,将符合条件的数组元素组合成新的数组</span><br><span class="line">        find():查找第一个符合条件的元素</span><br><span class="line">        from():把伪数组变为真数组</span><br><span class="line">        类似于字符串的方法:</span><br><span class="line">            concat():合并两个数组</span><br><span class="line">            indexOf():查找数组元素,没有返回-1</span><br><span class="line">            inCludes():数组中是否包含这个元素</span><br><span class="line"></span><br><span class="line">        pop():尾巴删除,一次只能删一个,返回删除后的原数组长度</span><br><span class="line">        push():尾巴添加能添加多个常和延展运算符连用,返回增加后原数组的新长度</span><br><span class="line">        <span class="built_in">shift</span>():头部删除和pop()一样</span><br><span class="line">        unshift():头部添加和push()一样</span><br><span class="line">        keys():返回数组中所有元素的索引的集合</span><br><span class="line">            const array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">            const iterator = array1.keys();</span><br><span class="line">            <span class="keyword">for</span> (const key of iterator) &#123;</span><br><span class="line">              console.log(key);&#125; 0,1,2</span><br><span class="line"></span><br><span class="line">        values():返回数组中所有元素的元素的集合</span><br><span class="line">            const array1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">            const iterator = array1.values();</span><br><span class="line">            <span class="keyword">for</span> (const value of iterator) &#123;</span><br><span class="line">              console.log(value);</span><br><span class="line">            &#125; a,b,c</span><br><span class="line"></span><br><span class="line">        toString():把数组转换成字符串</span><br><span class="line">        valueOf():返回数据类型本身,用于new的时候将简单数据类型转换成真正的简单数据类型,比如new Number(12).valueOf() ==&gt; 12,而复杂和数据类型无效</span><br><span class="line">        reverse():翻转数组</span><br><span class="line">        <span class="built_in">sort</span>():对数组排序,默认是字典排序</span><br><span class="line">            可以接受一个回调函数摆脱字典排序[1,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;D&quot;</span>,4,3].<span class="built_in">sort</span>((a,b) =&gt; a-b) ==&gt; [1, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, 3, 4] </span><br><span class="line">                [1,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;D&quot;</span>,4,3].<span class="built_in">sort</span>() ==&gt; [1, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, 4, 3]</span><br><span class="line">b.<span class="string">&#x27;Oject&#x27;</span>:创建形式new Object()或者字面量形式</span><br><span class="line">主要方法和属性:</span><br><span class="line">    create():可以用于创建对象Object.create(null) ==&gt; &#123;&#125;(该对象完全为空)</span><br><span class="line">        语法:Object.create(a,b),a表示产生的新对象要继承的原型链,b表示对象的描述属性</span><br><span class="line">        Object.create(null,&#123;a:&#123;重要的对象描述信息&#125;&#125;)</span><br><span class="line">        Object.create(null,&#123;a:&#123;value:1,writable:<span class="literal">true</span>,  configurable:<span class="literal">true</span>&#125;&#125;) ==&gt; &#123;a:1&#125;</span><br><span class="line"></span><br><span class="line">    assign():合并多个对象,后面的都赋值给第一个assign(&#123;a:1&#125;,&#123;a:2,b:3&#125;,&#123;d:4&#125;) ==&gt; &#123;a:2,b:3,d:4&#125;</span><br><span class="line">    defineProperty():自定义属性,参数三表示对象的描述信息对象</span><br><span class="line">        面试题:让数字x === x 为<span class="literal">false</span></span><br><span class="line">            window.x = 0</span><br><span class="line">            Object.defineProperty(window,<span class="string">&quot;x&quot;</span>,&#123;<span class="function"><span class="title">get</span></span>()&#123;<span class="built_in">return</span> Math.random()&#125;&#125;)</span><br><span class="line">            此时 x === x 等于<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    defineProperties():和defineProperty不一样的是,不能修改单个属性,只能接受对象的描述信息</span><br><span class="line">        configurable</span><br><span class="line">        <span class="literal">true</span> 只有该属性描述符的类型可以被改变并且该属性可以从对应对象中删除。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        enumerable</span><br><span class="line">        <span class="literal">true</span> 只有在枚举相应对象上的属性时该属性显现。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        value</span><br><span class="line">        与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。</span><br><span class="line">        默认为 undefined.</span><br><span class="line">        writable</span><br><span class="line">        <span class="literal">true</span>只有与该属性相关联的值被(en-US)改变时。</span><br><span class="line">        默认为 <span class="literal">false</span></span><br><span class="line">        get</span><br><span class="line">        作为该属性的 getter 函数，如果没有 getter 则为undefined。函数返回值将被用作属性的值。</span><br><span class="line">        默认为 undefined</span><br><span class="line">        <span class="built_in">set</span></span><br><span class="line">        作为属性的 setter 函数，如果没有 setter 则为undefined。函数将仅接受参数赋值给该属性的新值。</span><br><span class="line">        默认为 undefined</span><br><span class="line"></span><br><span class="line">    is():判断两个是不是相等Object.is(1,<span class="string">&quot;1&quot;</span>) ==&gt; <span class="literal">false</span> Object.is(1,1) ==&gt; <span class="literal">true</span></span><br><span class="line">    keys():返回对象的所有键组成的数组Object.keys(&#123;a:1,b:2,c:3&#125;) ==&gt; [<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line">    values():返回对象的所有值组成的数组Object.values(&#123;a:1,b:2,c:3&#125;)==&gt; [1,2,3]</span><br><span class="line">    valueOf():和数组的该方法一样</span><br><span class="line">    toString():转换成字符串</span><br></pre></td></tr></table></figure>
 
@@ -263,21 +311,29 @@
 
 
 
-      </div>
-      
-      
-      
     </div>
-    
 
     
     
     
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
 
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -475,25 +531,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '39b36d238f34d30e3592',
-      clientSecret: '0414d46c8f0bd004b5e9e8fde82b4be7f53fe8b0',
-      repo        : 'myBook',
-      owner       : 'toSANYue',
-      admin       : ['toSANYue'],
-      id          : '8d0831ab23534858d40cfa175033e069',
-        language: '',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 <script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/myBook/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/myBook/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/myBook/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/myBook/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/myBook/css/main.css">
+
+
+<link rel="stylesheet" href="/myBook/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tosanyue.github.io","root":"/myBook/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":1},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.什么是权限1权限是对是否能访问的限制,不同的角色访问不同的页面,按钮,菜单,请求等等,即不同的角色看到的页面不同  前端权限可以分为几种12341.请求权限:控制用户到底能不能发送这个请求2.路由权限:控制用户能不能直接通过url地址去访问页面3.菜单权限:和路有权限类似,页面上的layout页面显示多少个菜单按钮4.按钮权限:控制用户能不能点这个按钮,能不能看见这个按钮  请求权限12345">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于项目的一点点事儿">
+<meta property="og:url" content="https://tosanyue.github.io/myBook/items/index.html">
+<meta property="og:site_name" content="makeBook">
+<meta property="og:description" content="1.什么是权限1权限是对是否能访问的限制,不同的角色访问不同的页面,按钮,菜单,请求等等,即不同的角色看到的页面不同  前端权限可以分为几种12341.请求权限:控制用户到底能不能发送这个请求2.路由权限:控制用户能不能直接通过url地址去访问页面3.菜单权限:和路有权限类似,页面上的layout页面显示多少个菜单按钮4.按钮权限:控制用户能不能点这个按钮,能不能看见这个按钮  请求权限12345">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-09T03:14:48.000Z">
+<meta property="article:modified_time" content="2022-08-09T04:35:12.000Z">
+<meta property="article:author" content="lindy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tosanyue.github.io/myBook/items/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>关于项目的一点点事儿 | makeBook</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<link rel="alternate" href="/myBook/atom.xml" title="makeBook" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/myBook/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">makeBook</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">myBook</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-vue">
+
+    <a href="/myBook/" rel="section"><i class="fa fa-home fa-fw"></i>vue</a>
+
+  </li>
+        <li class="menu-item menu-item-js">
+
+    <a href="/myBook/javaScript/" rel="section"><i class="fa fa-user fa-fw"></i>js</a>
+
+  </li>
+        <li class="menu-item menu-item-html">
+
+    <a href="/myBook/html/" rel="section"><i class="fa fa-tags fa-fw"></i>html</a>
+
+  </li>
+        <li class="menu-item menu-item-css">
+
+    <a href="/myBook/css/" rel="section"><i class="fa fa-th fa-fw"></i>css</a>
+
+  </li>
+        <li class="menu-item menu-item-structure">
+
+    <a href="/myBook/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>structure</a>
+
+  </li>
+        <li class="menu-item menu-item-items">
+
+    <a href="/myBook/items" rel="section"><i class="fa fa-sitemap fa-fw"></i>items</a>
+
+  </li>
+        <li class="menu-item menu-item-react">
+
+    <a href="/myBook/react/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>react</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tosanyue.github.io/myBook/items/index.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myBook/images/myhead.jpg">
+      <meta itemprop="name" content="lindy">
+      <meta itemprop="description" content="博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="makeBook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于项目的一点点事儿
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-09 11:14:48 / 修改时间：12:35:12" itemprop="dateCreated datePublished" datetime="2022-08-09T11:14:48+08:00">2022-08-09</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-什么是权限"><a href="#1-什么是权限" class="headerlink" title="1.什么是权限"></a>1.什么是权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">权限是对是否能访问的限制,不同的角色访问不同的页面,按钮,菜单,请求等等,即不同的角色看到的页面不同</span><br></pre></td></tr></table></figure>
+
+<h3 id="前端权限可以分为几种"><a href="#前端权限可以分为几种" class="headerlink" title="前端权限可以分为几种"></a>前端权限可以分为几种</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.请求权限:控制用户到底能不能发送这个请求</span><br><span class="line">2.路由权限:控制用户能不能直接通过url地址去访问页面</span><br><span class="line">3.菜单权限:和路有权限类似,页面上的layout页面显示多少个菜单按钮</span><br><span class="line">4.按钮权限:控制用户能不能点这个按钮,能不能看见这个按钮</span><br></pre></td></tr></table></figure>
+
+<h4 id="请求权限"><a href="#请求权限" class="headerlink" title="请求权限"></a>请求权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1.请求权限可以通过axios的请求拦截器和响应拦截器来控制</span><br><span class="line">	具体做法:</span><br><span class="line">		🍕利用vuex和cookie</span><br><span class="line">			1)写入:在vuex中使用action异步发起请求获取token,在mutations中拿到actions中得到的token,</span><br><span class="line">			  在利用js-cookie封装好的<span class="built_in">set</span>方法,将token写入到本地cookie中</span><br><span class="line">            2)读取:在vuex的state读取本地cookie(利用到的方法时js-cookie中的get方法),写入到state中的token属性上</span><br><span class="line">            3)设置有效期:</span><br><span class="line">                a.浅析为什么要设置有效期</span><br><span class="line">                    a)Cookie是在浏览器发送请求到服务器的时候,服务器返回给浏览器的一串字符,里面保存了用户的信息,保存在本地cookie中</span><br><span class="line">                    b)Session也是在浏览器发送发送请求到服务器时,服务器会保存这些浏览器发送过来的用户信息,保存在服务器上</span><br><span class="line">                    c)Cookie由于保存在本地,假设你在网吧登录某个网站后,退出了,下一个用你这台电脑的人,恰好是懂行的人,</span><br><span class="line">                      把你的cookie拿到了,就可以伪造你的cookie,造成你的信息泄露</span><br><span class="line">                    d)Session由于是保存在服务器上的,服务器连显示器都没有,那就安全得很</span><br><span class="line">				b.所以为了安全着想,需要给token设置一个时效</span><br><span class="line">		🍔怎么设置时效性</span><br><span class="line">            1)在mutations中存入token的时候记录此时的时间戳oldTime</span><br><span class="line">            2)设置一个过期的时间间隔time</span><br><span class="line">            3)在获取到现在的时间的时间戳newTime</span><br><span class="line">            4)当newTime-oldTime &gt;= time的时候,调用js-cookie的remove方法,清除token即可</span><br><span class="line">		🍖根据前两步的准备,在发请求的之前,利用<span class="variable">$store</span>.state.user.token取到vuex中的token, 判断是否有token,有token才允许发送请求,</span><br><span class="line">		  否则提示用户token失效,并且利用<span class="variable">$router</span>.push(‘/login’)回到登录页面</span><br><span class="line">2.总结:请求权限是控制的登陆后的的发请求权限</span><br><span class="line">	在你登陆之后要访问某个页面的时候，如果token过期了，那么当用户要该变url地址的时候，自动触发<span class="variable">$router</span>.push(‘/login’)，跳回到登陆页面</span><br></pre></td></tr></table></figure>
+
+<h4 id="路有权限"><a href="#路有权限" class="headerlink" title="路有权限"></a>路有权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.路由权限可以利用路由得路由守卫来实现</span><br><span class="line">	具体做法：</span><br><span class="line">		🥩控制路由是否可以跳转,把路由分为静态路由和动态路由</span><br><span class="line">			1)静态路由表示没有权限也可以访问的页面,动态路由表示只有对应的权限才能访问</span><br><span class="line">		🍤利用前置路由守卫beforEach(to,from,next)&#123;&#125;</span><br><span class="line">			1)为了防止网络信号不通畅的时候页面不显示的问题,可以引入一个进度条插件NProgerss,在前置路由守卫开始</span><br><span class="line">			  使用NProgress.start()开启进度条展示</span><br><span class="line">			2)在进度条开启后可以条件判断以下内容</span><br><span class="line">				a.进入的页面是不是静态路由的页面,比如登录,比如404,如果是就让用户进入next()放行,如果不是就不让用户进入该页面,</span><br><span class="line">				  并且回退到登录页面next(‘/login’),提示用户登录</span><br><span class="line">				b.为了和菜单权限做控制,在前置守卫中也可以发起请求,去请求后端的菜单字段,利用菜单权限js中的actions的方法传递</span><br><span class="line">				  给过滤函数的形参上面,方便菜单控制的时候过滤动态数组</span><br><span class="line">2.总结:路有权限是控制没有登录时的页面访问权</span><br><span class="line">	在没有登陆的时候，不准通过url跳转页面，除非是白名单页面，不需要登陆就可以直接去</span><br></pre></td></tr></table></figure>
+
+<h4 id="菜单权限"><a href="#菜单权限" class="headerlink" title="菜单权限"></a>菜单权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.菜单权限是通过vuex的模块化,模块名称user,导入动态路由和静态路由,利用后端返回的菜单字段,来刷选动态路由的个数</span><br><span class="line">	具体做法:</span><br><span class="line">		🧇在菜单权限控制的js文件里导入路由js中的静态路由和动态路由</span><br><span class="line">		🍠在路由的前置守卫中发起请求,去拿到后端给的菜单字段,这个菜单字段保存的是动态数组中的部分或者全部数据</span><br><span class="line">		🥟利用vuex的模块化,state中写入定义routes属性为一个空数组,actions中根据后端返回的菜单字段,利用数组的filter和includes方法来过滤动态数组,</span><br><span class="line">		 再在mutations中让state中的routes等于静态数组和过滤后的数组结合的数组,将结果<span class="built_in">return</span> 出去</span><br><span class="line">		🧆在页面中利用<span class="variable">$store</span>.state.user.routes来权限控制菜单的显示数量</span><br><span class="line">2.总结,菜单权限是在登陆后对菜单页面数量显示的控制</span><br></pre></td></tr></table></figure>
+
+<h4 id="按钮权限"><a href="#按钮权限" class="headerlink" title="按钮权限"></a>按钮权限</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.按钮权限的两种实现方式</span><br><span class="line">  (1)V-<span class="keyword">if</span>控制</span><br><span class="line">	🧂V-<span class="keyword">if</span>和动态表单类似,根据后端返回的用户按钮权限字段,存入vuex中,在不同的按钮上判断v-if = “!!权限字段”来控制</span><br><span class="line">	🧈或者在登陆后拿到用户权按钮限字段后,存入vuex中,在全局封装一个函数,利用数组的indexOf来判断是否存在,将结果<span class="built_in">return</span>出去,</span><br><span class="line">	  然后将这个函数挂载在vue的原型链上,在需要用到按钮的地方使用v-if判断即可</span><br><span class="line">  (2)自定义指令控制</span><br><span class="line">	🍜在路由的元信息中配置好一个按钮权限数组,把按钮权限存入vuex中</span><br><span class="line">	🍦在全局自定义一个指令,(指令在vue中有写到)</span><br><span class="line">	🍧在自定义指令中,自定义一个空的权限数组,先看是不是给指令传了值,如果给指令传值了,就把这个值保存在一个权限数组中,</span><br><span class="line">	  如果没有的话就直接去路由元信息中拿,此时就拿到了权限数组array</span><br><span class="line">	🥣封装一个函数,把之前拿到的权限数组传递给这个函数,在函数体里,去取到vuex中的用户的按钮权限数据,和array对比,</span><br><span class="line">	  如果刷选出有一样的数据,就返回<span class="literal">true</span>,没有的话就返回<span class="literal">false</span></span><br><span class="line">	🍄回到自定义指令中,判断第四部封装的函数返回值是什么,如果是<span class="literal">true</span>,就捕捉处理,如果是<span class="literal">false</span>就利用原生dom事件,removeChild删除这个节点</span><br><span class="line">2.总结：按钮权限是让不让用户看到某个按钮的功能实现</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-大文件上传终极详细思路"><a href="#2-大文件上传终极详细思路" class="headerlink" title="2.大文件上传终极详细思路"></a>2.大文件上传终极详细思路</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">前端大文件上传的实现思路</span><br><span class="line">    1.选择文件步骤实现:</span><br><span class="line">    2.既然要上传文件,那么基本结构至少要有个文件表单域,上传按钮</span><br><span class="line">    3.首先要拿到文件对象;对表单的onchange或者oninput事件的形参解构赋值,拿到文件对象files,根据files的size可以断定,这个size单位是字节</span><br><span class="line">    4.拿到文件对象后,由于文件过大,需要对文件切片,这里利用到了文件对象File继承于Blob对象,因此根据原型链,File可以直接调用Blob的方法</span><br><span class="line">    5.上传步骤实现:</span><br><span class="line">    6.调用Blob的方法slice,该方法能接受两个参数start,end,start表示起始切片位置,end表示结束切片位置</span><br><span class="line">	7.定义三个变量,分别是</span><br><span class="line">        (1)sliceArr = [],来装切片的数据</span><br><span class="line">        (2)index = 0,数组索引是为了后端合并切片时按照顺序合并</span><br><span class="line">        (3)size = 1024 * n每一步切片的大小</span><br><span class="line">	8.遍历files.size,从0开始切,每一次切size大小,实现原理如下</span><br><span class="line">		(1)<span class="keyword">for</span>(<span class="built_in">let</span> i = 0 ; i &lt; files.size; i = i + size)&#123;</span><br><span class="line">			sliceArr.push(&#123;</span><br><span class="line">				<span class="built_in">hash</span>:index++,</span><br><span class="line">				chunk:files.slice(i,i+size)</span><br><span class="line">				&#125;)&#125;</span><br><span class="line">		(2)现在就得到了切片好的数组sliceArr</span><br><span class="line">	9.考虑问题:</span><br><span class="line">		(1)切片的数量还能一次性直接发请求吗(不能)</span><br><span class="line">			如何减少单次请求数量(考虑Promise的race方法)</span><br><span class="line">				1)怎么控制每一次进入race的切片数量(定义一个max,条件判断)</span><br><span class="line">		(2)请求错误了怎么处理(利用catch)</span><br><span class="line">			具体怎么解决</span><br><span class="line">                1)利用race的参数特性(参数是一个promise数组,其实只要是数组就行)</span><br><span class="line">                2)利用封装一个函数递归</span><br><span class="line">			怎么确保每一个切片请求都发送成功</span><br><span class="line">				1)利用Promise的finally方法，递归调用(失败也好,成功也罢,都会进入的一个方法)</span><br><span class="line">    10.封装一个处理函数mySliceFiles(list)&#123;&#125;,方便复用,来封装接下来的所有代码步骤</span><br><span class="line">    11.遍历上文拿到的切片数组sliceArr,下面的代码装在遍历操作里面</span><br><span class="line">		(1)实现思路如下</span><br><span class="line">			<span class="keyword">for</span>(<span class="built_in">let</span> i = 0 ; i&lt; sliceArr.length ; i ++)&#123;&#125;</span><br><span class="line">	12.接口需要传递参数,考虑到formData文件数据对象的特性</span><br><span class="line">		(1)创建一个空的formData对象  const data = new formData()</span><br><span class="line">			formData介绍</span><br><span class="line">				1)包含键值对的形式,只作用在表单上有效</span><br><span class="line">		(2)调用formData上的append方法来添加接口需要的字段</span><br><span class="line">			append方法介绍:</span><br><span class="line">				1)传递两个参数,键和值</span><br><span class="line">				2)传递进入的键值对会加入到formData的实例中</span><br><span class="line">    13.根据接口文档,利用axios封装请求函数task</span><br><span class="line">    14.根据第九节的问题,已知需要三个变量,但同时为了方便控制还需要第四个参数</span><br><span class="line">        (1)Pool:并发池,作为race的参数</span><br><span class="line">        (2)FailList:请求失败的切片的数组,注意不是请求的数组</span><br><span class="line">        (3)Max:条件控制每一次进入race的请求数量</span><br><span class="line">        (4)Finish:记录执行过的请求的数量,不论失败成功</span><br><span class="line">	15.根据pool的长度条件判断是否执行race,实现原理如下</span><br><span class="line">        (1)给pool添加数据,数据是task</span><br><span class="line">        (2)If(pool.length === max)&#123;Promise.race(pool)&#125;</span><br><span class="line">	16.根据第十五节,请求是否成功未知,在考虑到第九节的问题,此时需要如下处理</span><br><span class="line">		(1)<span class="keyword">then</span>成功进入task.then</span><br><span class="line">            由于需要条件控制,那么在这里需要做的事情就很明确了,找到执行成功的请求,并且把它移除掉</span><br><span class="line">            实现思路</span><br><span class="line">                task.then(() =&gt; &#123;</span><br><span class="line">                	const index = pool.findIndex(item =&gt; item === task) </span><br><span class="line">                	pool.slice(index)</span><br><span class="line">                &#125;)</span><br><span class="line">		(2)catch失败进入task.catch</span><br><span class="line">			第九节有说,需要递归遍历,那么在catch中需要解决的是,把失败的请求装入到failList中</span><br><span class="line">			实现思路</span><br><span class="line">				1)task.catch(() =&gt; &#123;failList.push(sliceArr(i))&#125;)</span><br><span class="line">		(3)finally 成功也好失败也罢都会进入task.finally</span><br><span class="line">			在这里每执行一个请求就会记录一次finish,finish总是和请求的执行数量保持一致</span><br><span class="line">				1)finish++</span><br><span class="line">			当所有的请求执行完成过后将失败的切片列表failList传入到mySliceFiles(failList)中,再次执行</span><br><span class="line">				1)实现思路</span><br><span class="line">                    task.finally(() =&gt; &#123;</span><br><span class="line">                    	finish++</span><br><span class="line">                    	<span class="keyword">if</span>(finish === list.length)&#123;</span><br><span class="line">                   		  mySliceFiles(faiList)</span><br><span class="line">                    	&#125;)&#125;)</span><br><span class="line">	17.最后根据接口文档封装合并切片接口</span><br><span class="line">		(1)实现思路</span><br><span class="line">			根据上述所知,当请求全部执行成功后,mySliceFiles(list)的形参list长度为0</span><br><span class="line">                <span class="keyword">if</span>(list.length === 0)&#123;</span><br><span class="line">                	//封装合并的接口</span><br><span class="line">                	<span class="built_in">return</span></span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9D%83%E9%99%90"><span class="nav-number">1.</span> <span class="nav-text">1.什么是权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%9D%83%E9%99%90%E5%8F%AF%E4%BB%A5%E5%88%86%E4%B8%BA%E5%87%A0%E7%A7%8D"><span class="nav-number">1.1.</span> <span class="nav-text">前端权限可以分为几种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%9D%83%E9%99%90"><span class="nav-number">1.1.1.</span> <span class="nav-text">请求权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%AF%E6%9C%89%E6%9D%83%E9%99%90"><span class="nav-number">1.1.2.</span> <span class="nav-text">路有权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8F%9C%E5%8D%95%E6%9D%83%E9%99%90"><span class="nav-number">1.1.3.</span> <span class="nav-text">菜单权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E9%92%AE%E6%9D%83%E9%99%90"><span class="nav-number">1.1.4.</span> <span class="nav-text">按钮权限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E7%BB%88%E6%9E%81%E8%AF%A6%E7%BB%86%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">2.大文件上传终极详细思路</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lindy"
+      src="/myBook/images/myhead.jpg">
+  <p class="site-author-name" itemprop="name">lindy</p>
+  <div class="site-description" itemprop="description">博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/myBook/archives">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lindy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">16k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">15 分钟</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/myBook/lib/anime.min.js"></script>
+  <script src="/myBook/lib/velocity/velocity.min.js"></script>
+  <script src="/myBook/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/myBook/js/utils.js"></script>
+
+<script src="/myBook/js/motion.js"></script>
+
+
+<script src="/myBook/js/schemes/pisces.js"></script>
+
+
+<script src="/myBook/js/next-boot.js"></script>
+
+
+  <script defer src="/myBook/lib/three/three.min.js"></script>
+    <script defer src="/myBook/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/myBook/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
