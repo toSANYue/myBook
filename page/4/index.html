@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-31 19:56:34" itemprop="dateModified" datetime="2022-07-31T19:56:34+08:00">2022-07-31</time>
+                <time title="修改时间：2022-08-13 18:57:55" itemprop="dateModified" datetime="2022-08-13T18:57:55+08:00">2022-08-13</time>
               </span>
 
           <br>
@@ -244,7 +244,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>772</span>
+              <span>878</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -266,6 +266,10 @@
           <h1 id="混入"><a href="#混入" class="headerlink" title="混入"></a>混入</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">全局混入 : mixin</span><br><span class="line">	语法:Vue.mixin(&#123;</span><br><span class="line">  		// 这里是vue中的data,create,等</span><br><span class="line">		&#125;)</span><br><span class="line">	</span><br><span class="line">局部混入 ： mixins</span><br><span class="line">	语法:  mixins: &#123;</span><br><span class="line">    		<span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">      			<span class="built_in">return</span> &#123;&#125;</span><br><span class="line">    		&#125;,</span><br><span class="line">    		<span class="function"><span class="title">created</span></span> () &#123;&#125;,</span><br><span class="line">    		<span class="function"><span class="title">mounted</span></span> () &#123;&#125;,</span><br><span class="line">    		methods: &#123;&#125;,</span><br><span class="line">    		computed: &#123;&#125;,</span><br><span class="line">    		watch: &#123;&#125;</span><br><span class="line">  		&#125;,</span><br><span class="line">混入的先后顺序:</span><br><span class="line">	混入时,如果组件和混入的文件具有相同的属性名(data中的变量),那么以组件中的为准,如果钩子函数冲突了,先执行混入文件的钩子函数,在执行组件的</span><br><span class="line">混入的优缺点:</span><br><span class="line">	缺点:混入具有变量名冲突的问题,可能会被滥用,不是自己写的,其他人维护起来不知道该怎么用</span><br><span class="line">	优点:对于一小段代码来讲,重用性很高,方便复用</span><br></pre></td></tr></table></figure>
 
 <h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">全局过滤 : filter</span><br><span class="line">	语法:Vue.filter(<span class="string">&#x27;filterName&#x27;</span>, &#123;</span><br><span class="line">		//对象里面是一个方法,该方法必须要有返回值</span><br><span class="line">	&#125;)</span><br><span class="line">局部过滤 : filters</span><br><span class="line">	语法:filters:&#123;//对象里面是一个方法,该方法必须要有返回值&#125;</span><br><span class="line">为什么要过滤器函数要有返回值?</span><br><span class="line">	答:在vue中过滤器多作用在插值表达式上,和管道符一起匹配,因为插值表达式只接受表达式,变量,不接受函数</span><br><span class="line">函数有无返回值的意义是否一样?</span><br><span class="line">	答:函数若是有了返回值,name其实这个函数也就变成了一个表达式或者一个特定的值;如果没有返回值的话,函数执行到最后还是函数</span><br><span class="line">过滤器依赖什么?</span><br><span class="line">	答:过滤器和计算属性一样依赖于响应式数据,从而得出某种结果,或者筛选某种结果</span><br></pre></td></tr></table></figure>
+<h2 id="样式穿透"><a href="#样式穿透" class="headerlink" title="样式穿透"></a>样式穿透</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">直接使用css : &gt;&gt;&gt;</span><br><span class="line">使用预编译语言 : /deep/或者::v-deep</span><br></pre></td></tr></table></figure>
+
+<h3 id="scoped"><a href="#scoped" class="headerlink" title="scoped"></a>scoped</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scoped使用后,是样式只在当前的组件生效</span><br><span class="line"></span><br><span class="line">在每个标签的类名上添加一个data-属性,表示唯一</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -284,7 +288,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/myBook/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/myBook/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBook/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/7/">7</a><a class="extend next" rel="next" href="/myBook/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/myBook/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/myBook/">1</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/myBook/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/myBook/page/8/">8</a><a class="extend next" rel="next" href="/myBook/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -351,7 +355,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/myBook/archives">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -402,12 +406,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">23k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
         
@@ -488,5 +492,5 @@
   
 
 
-<script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/myBook/live2dw/assets/assets/haru01.model.json"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+<script src="/myBook/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"D:\\pycharmproject\\自己的博客搭建\\myBook\\live2d\\live2d-widget-model-haru\\01"},"display":{"position":"left","width":150,"height":300,"hOffset":-15,"vOffset":-15},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

@@ -6,7 +6,7 @@
   <link href="https://tosanyue.github.io/myBook/atom.xml" rel="self"/>
   
   <link href="https://tosanyue.github.io/myBook/"/>
-  <updated>2022-08-04T14:15:40.457Z</updated>
+  <updated>2022-08-13T14:13:44.556Z</updated>
   <id>https://tosanyue.github.io/myBook/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue3的api</title>
+    <link href="https://tosanyue.github.io/myBook/2022/08/13/vue3-API/"/>
+    <id>https://tosanyue.github.io/myBook/2022/08/13/vue3-API/</id>
+    <published>2022-08-13T07:00:33.000Z</published>
+    <updated>2022-08-13T14:13:44.556Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;setup&quot;&gt;&lt;a href=&quot;#setup&quot; class=&quot;headerlink&quot; title=&quot;setup&quot;&gt;&lt;/a&gt;setup&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>vue3的特性</title>
     <link href="https://tosanyue.github.io/myBook/2022/08/01/vue3%E7%9A%84%E7%89%B9%E6%80%A7/"/>
     <id>https://tosanyue.github.io/myBook/2022/08/01/vue3%E7%9A%84%E7%89%B9%E6%80%A7/</id>
     <published>2022-08-01T04:39:46.000Z</published>
-    <updated>2022-08-04T14:15:40.457Z</updated>
+    <updated>2022-08-13T11:23:22.356Z</updated>
     
     
       
@@ -59,11 +80,11 @@
   </entry>
   
   <entry>
-    <title>vue_组件通信</title>
+    <title>vue-组件通信</title>
     <link href="https://tosanyue.github.io/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
     <id>https://tosanyue.github.io/myBook/2022/07/31/vue-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</id>
     <published>2022-07-31T11:50:39.000Z</published>
-    <updated>2022-07-31T12:42:26.330Z</updated>
+    <updated>2022-08-13T10:55:59.830Z</updated>
     
     
       
@@ -84,7 +105,7 @@
     <link href="https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/"/>
     <id>https://tosanyue.github.io/myBook/2022/07/30/vue2%E7%9A%84%E8%A1%A5%E5%85%85/</id>
     <published>2022-07-30T10:59:26.000Z</published>
-    <updated>2022-07-31T11:56:34.583Z</updated>
+    <updated>2022-08-13T10:57:55.740Z</updated>
     
     
       
@@ -143,11 +164,11 @@
   </entry>
   
   <entry>
-    <title>关于vueAPI的亿点点事</title>
-    <link href="https://tosanyue.github.io/myBook/2022/07/29/vueAPI/"/>
-    <id>https://tosanyue.github.io/myBook/2022/07/29/vueAPI/</id>
+    <title>关于vue2API的亿点点事</title>
+    <link href="https://tosanyue.github.io/myBook/2022/07/29/vue2-API/"/>
+    <id>https://tosanyue.github.io/myBook/2022/07/29/vue2-API/</id>
     <published>2022-07-29T07:00:16.000Z</published>
-    <updated>2022-07-29T13:58:44.859Z</updated>
+    <updated>2022-08-13T07:00:49.128Z</updated>
     
     
       
